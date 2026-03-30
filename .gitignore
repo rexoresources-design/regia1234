@@ -1,0 +1,7 @@
+*
+!.gitignore
+!.vercelignore
+!README.md
+!vercel.json
+!site/
+!site/**

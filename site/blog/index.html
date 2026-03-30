@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fc",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#005bbe",
+              "primary-container": "#4b90ff",
+              "tertiary": "#8e4e00",
+              "surface-container": "#eceef1",
+              "surface-container-low": "#f2f4f7",
+              "inverse-surface": "#2d3133",
+              "inverse-primary": "#acc7ff",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#b9c0fd",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "on-surface": "#191c1e",
+              "on-tertiary-fixed-variant": "#6c3a00",
+              "on-primary-container": "#00295d",
+              "background": "#f7f9fc",
+              "on-primary-fixed-variant": "#004492",
+              "on-surface-variant": "#424753",
+              "on-background": "#191c1e",
+              "on-secondary-fixed-variant": "#3b4377",
+              "on-secondary-container": "#454d82",
+              "surface-dim": "#d8dadd",
+              "surface-container-high": "#e6e8eb",
+              "surface": "#f7f9fc",
+              "secondary-fixed": "#dfe0ff",
+              "on-primary-fixed": "#001a40",
+              "secondary-fixed-dim": "#bcc3ff",
+              "inverse-on-surface": "#eff1f4",
+              "on-primary": "#ffffff",
+              "surface-tint": "#005bbe",
+              "on-tertiary-fixed": "#2e1500",
+              "primary-fixed-dim": "#acc7ff",
+              "primary-fixed": "#d7e2ff",
+              "on-secondary-fixed": "#0e1549",
+              "secondary": "#535a91",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#d97a00",
+              "surface-variant": "#e0e3e6",
+              "tertiary-fixed": "#ffdcc1",
+              "surface-container-highest": "#e0e3e6",
+              "outline": "#727785",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "outline-variant": "#c2c6d5",
+              "tertiary-fixed-dim": "#ffb779",
+              "on-tertiary-container": "#442200"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #005bbe, #4b90ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .mask-fade {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+        .sticky-sidebar {
+            top: 6rem;
+            max-height: calc(100vh - 8rem);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-outline-variant/10 transition-all duration-300">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white font-headline">Hive Tutors</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary font-label text-sm font-semibold transition-all duration-300" href="#">Programs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary font-label text-sm font-semibold transition-all duration-300" href="#">For Tutors</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary font-label text-sm font-semibold transition-all duration-300" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary font-label text-sm font-semibold transition-all duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-slate-600 dark:text-slate-400 hover:text-primary font-label text-sm font-semibold transition-all duration-300">Login</button>
+<button class="bg-primary text-white px-6 py-2.5 rounded-full font-label text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary-container transition-all duration-200">Register</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<div class="max-w-7xl mx-auto px-6 mb-16">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8 py-12 border-b border-outline-variant/20">
+<div class="max-w-2xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="w-8 h-[2px] bg-primary"></span>
+<span class="text-primary font-bold font-label text-xs uppercase tracking-widest">Knowledge Hub</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-on-surface mb-6">
+                        The Illuminated <span class="text-gradient">Hive</span>
+</h1>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                        A curated space for high-achievers. Exploring the intersection of adaptive education, elite mentorship, and career strategy.
+                    </p>
+</div>
+<div class="hidden lg:block">
+<div class="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="border-none focus:ring-0 text-sm font-medium placeholder:text-outline-variant min-w-[240px]" placeholder="Search the archives..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Story Section -->
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="relative group grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white rounded-[2.5rem] p-4 md:p-8 shadow-xl shadow-slate-200/50 border border-white">
+<div class="md:col-span-7 overflow-hidden rounded-[2rem]">
+<img class="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="young professionals collaborating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3AHiZEabNU0p-5WuGGUW4nGL_umd-GTbzuIZCdPhQCoW6r3P2iS3y4XzKtRNKaHfb7jprVaeRBqCqGCD6XMIz-NCFXJTi55I3t_GpJXx8-F5qtIxKnWkVBDDdhOJ76rT9wMZFEBfyJoZ0TDQvQ_FcKGkuD7d4ipraG_NUF1oQbiaTRhlfY5imUPP5H16v_GstjjQ1i7J2ZDu_NqeWFlH4HSr8FISDQ1v9xLCdtGXyByicHN3rRo--TJeGwC4VqQjfIvpeEzKqGps"/>
+</div>
+<div class="md:col-span-5 px-4 md:px-8">
+<div class="flex items-center gap-2 mb-6 text-primary font-bold text-xs uppercase tracking-widest">
+<span>Featured Insight</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant font-medium">12 Min Read</span>
+</div>
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface mb-6 leading-[1.1]">
+                        Bridging the Gap: AI's Role in Personalized 1-on-1 Mentorship
+                    </h2>
+<p class="text-on-surface-variant mb-10 text-lg leading-relaxed">
+                        Discover how modern tutoring platforms are leveraging adaptive learning algorithms to enhance, rather than replace, the human element in high-stakes education.
+                    </p>
+<div class="flex items-center justify-between pt-8 border-t border-outline-variant/10">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Dr. Julian Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvnB8nmYMy3JXhcQCWfuO58Q40JqQKreoBORcjHgws_REYOsbYz2vq779hiNRopcms8CevTBvfAbPMfyVHSKphR8491IOll8qD2ZG_rhGms1_nQmT6F1LgKJH6EWf-3hx8855wnqTTud-urTzZFgq8IWSFLFwaK9a8iPcRsT9-61pGMc3Amdo6BSYHjnxUY9ZpvSYR34-hI8C0NkOF8y2_-a1WuxZm5z2P-C3fxNKybeIE6shnpDMXz8TQZA31fpPhRlxboTqP3FCg"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Dr. Julian Vance</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider font-bold">Chief Academic Officer</p>
+</div>
+</div>
+<a class="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Feed with Sidebar -->
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar -->
+<aside class="w-full lg:w-80 shrink-0">
+<div class="sticky sticky-sidebar space-y-12">
+<!-- Advanced Category Navigation -->
+<div>
+<h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="w-4 h-[1px] bg-primary"></span> Categories
+                            </h3>
+<nav class="space-y-1">
+<a class="flex items-center justify-between group px-4 py-3 rounded-xl bg-primary text-white font-bold text-sm shadow-md shadow-primary/20" href="#">
+<span>All Perspectives</span>
+<span class="text-white/60 text-xs">24</span>
+</a>
+<a class="flex items-center justify-between group px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all text-on-surface-variant font-medium text-sm" href="#">
+<span class="group-hover:text-primary transition-colors">Career Advice</span>
+<span class="text-outline-variant text-xs font-bold">8</span>
+</a>
+<a class="flex items-center justify-between group px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all text-on-surface-variant font-medium text-sm" href="#">
+<span class="group-hover:text-primary transition-colors">Study Techniques</span>
+<span class="text-outline-variant text-xs font-bold">12</span>
+</a>
+<a class="flex items-center justify-between group px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all text-on-surface-variant font-medium text-sm" href="#">
+<span class="group-hover:text-primary transition-colors">Industry Trends</span>
+<span class="text-outline-variant text-xs font-bold">5</span>
+</a>
+<a class="flex items-center justify-between group px-4 py-3 rounded-xl hover:bg-surface-container-low transition-all text-on-surface-variant font-medium text-sm" href="#">
+<span class="group-hover:text-primary transition-colors">Tutor Spotlights</span>
+<span class="text-outline-variant text-xs font-bold">4</span>
+</a>
+</nav>
+</div>
+<!-- Subscription Premium Card -->
+<div class="relative overflow-hidden bg-on-surface p-8 rounded-3xl text-white">
+<div class="relative z-10">
+<h4 class="text-2xl font-headline font-bold mb-4 leading-tight">Elite Digest</h4>
+<p class="text-white/70 text-sm mb-8 leading-relaxed">Exclusive educational insights delivered to your inbox every Sunday morning.</p>
+<div class="space-y-3">
+<input class="w-full px-5 py-3.5 rounded-2xl bg-white/10 border border-white/10 text-white placeholder:text-white/40 focus:ring-primary focus:bg-white/20 transition-all text-sm" placeholder="your@email.com" type="email"/>
+<button class="w-full bg-primary hover:bg-primary-container text-white py-4 rounded-2xl font-bold text-sm transition-all shadow-xl shadow-primary/20">Subscribe Now</button>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]">hive</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Article Grid -->
+<div class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+<!-- Article 1 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-3xl aspect-[1.4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="laptop with diagrams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5gtrWWTTDaY1sL3zMld2TMag6Z76ADd4D90RALHwunNVNU4wed_ArvgHBoCJ65jQuEXmzfNUIHD0HhsAS3FXxdHpui-eZZv2S3jMtRAgTEZFTPB8XAczP3lJBMW-x4ds9XODDiacaUc4YPTe5CzVa2N6YbCu6bZRpVxd0XiC_Xf2g2j97u8A5CZpZq4gyitTKyV0dYQjolPWfZtUQrqgaE9VgpJdXQVDHrWFaPF_47DfkexyrfaNQVJBOoRfipXNt-oufqxNIUfGs"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">Technique</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4 text-[11px] font-bold text-outline uppercase tracking-widest">
+<span>Oct 24, 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>7 Min Read</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">The Science of Deep Work: Mastering Concentration</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Learn cognitive strategies used by Ivy League students to achieve flow state during rigorous study sessions.</p>
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="Sarah Jennings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGwcF0FHh7v5WSyEMe21Vjn47x7LJ6u6fYtkIPD_0hymNlpkYiBafYyKrnBczyD_04WwvwS3Q-vdGLILPQdxNjdwGYMexBqAOrcrdZk7A4E6gUajIdusSQs4EvVfAnZGmb6fqNYBe_3d8B0LONvyWb5RULbzEB1g31oshgcrhhIoAZgMRlSlM8RbktBJjaYqqLOYW3EOIOSOgIbtO1jNljIbMnI26y9ONeqwM_juc75zgC1L5nq-iWa0N0oiuHBg_Kk62MIKoJiMlc"/>
+<span class="text-xs font-bold text-on-surface">Sarah Jennings</span>
+</div>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-3xl aspect-[1.4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="students high-fiving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo3XFECFIn2-G2Wio7GyTOpoItpyTTxU6IJw6CIscQI0ksltxajvhzZ_t9wiXMej9jHXSGTNXqDYO4_8bsU5D6-5kBbi6YZf6SnDbhIzz-AL3GD6kT6ksiipGrXyBd5WSZ4C_j426WdYMBxQex0zDghKx9g0iQU0zg3hrEp6FvDa5FnEWElkgGNIm6XeggJvzmTg5wkRPC69ZJJa-uwldJi0L0q_CuzxaDGYcdG-QPJaw4v4QJYA1DQuN4zFtIpWn5MGFtRdhvvFbj"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">Career</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4 text-[11px] font-bold text-outline uppercase tracking-widest">
+<span>Oct 20, 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>9 Min Read</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">Beyond the Degree: Skills Employers Actually Care About</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">A comprehensive analysis of emerging soft skills that are becoming mandatory in global tech markets.</p>
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full" data-alt="Markus Thon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0T-6REqLf_09ZdfVQXBXKq994J7AqO9RPKI4giQuh0F9gPG84bUmwGMqb6d2tBWKaBPpCGWfrEbZCZbu1HL91qNliT9Iib2BYPRmbCgXs2mbC9UQOGGVBIG_Rhv_nQqUxETBLWuRpxd5whuplfqO_5qJaq-yQnmwqp2uaZAb9b-cP2i2rnoeaOvudQd74wbPTbARL5NdSyhaubwJQ6Zh_kIFNnlsR1218MEk6LkiVRU-t6_HPfPak2KSS0ftKiT-iRCl_5zGyAs4-"/>
+<span class="text-xs font-bold text-on-surface">Markus Thon</span>
+</div>
+</div>
+</article>
+<!-- Large Featured Article (Horizontal) -->
+<article class="md:col-span-2 group flex flex-col md:flex-row gap-10 items-center bg-white p-8 rounded-[2.5rem] shadow-sm border border-outline-variant/10">
+<div class="w-full md:w-1/2 overflow-hidden rounded-[2rem]">
+<img class="w-full aspect-square md:aspect-video object-cover transition-transform duration-700 group-hover:scale-105" data-alt="virtual classrooms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-hoZlrinVOGV49FLKevlyR5SmXHGY-igGOpfq0ezhZtbUfX6e5eu44NkQoZomyNYunwjXoTYyBxKcbFGh2_fLPNs7kSGzk_V6W_Dbpcrel7FEYyqcCr6VeHxjRED7sDaHr25ErZZWAk83maUwT_yJZGXTXtn1aNId33ZJzpHaeOJBnWdmSeu13OY4LsS0Mp2Hhv43wCkvvUEGAdotyKVZcrpuE6fFXo2bhdwucX-eG04zj2MU_q0TCP5H7aIRfPmkNWw4jOAyclHh"/>
+</div>
+<div class="w-full md:w-1/2 space-y-4">
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-extrabold uppercase tracking-widest">Industry Pulse</span>
+<h3 class="text-3xl font-headline font-bold text-on-surface leading-tight group-hover:text-primary transition-colors">The Evolution of Virtual Classrooms &amp; Distance Learning</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">How immersive technology and real-time interaction are redefining the distance learning experience for international students.</p>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="text-xs font-bold text-outline-variant uppercase tracking-widest">Oct 15, 2025</span>
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all">
+                                        Read Analysis <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Article 4 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-3xl aspect-[1.4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="person writing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCPewb2h0LZAGDlrwCiAvCSmF6K2WqtL-Ud74Fi0jFMf5JDq5mqZYpMivDcY8ICzfS5Enl4MkCtcNWdZ3Bir-wvDtmL_ZLUbifCTnloqCRcWGuFQn7NqDdiFjFQcrAzcAMQzmOcPZCFAzfZXhoghohWrmjHy6DtvVZiEWeYdpKnWut6L1eNyRwl_ztjQrbLybIolLvQAfhDsbnyzVi9l0K6JFdFFoMlZcuedn74jDxk_HxfNgFrqAL8TMiS8mnOt17zJNY_TxLKl1X"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">Technique</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4 text-[11px] font-bold text-outline uppercase tracking-widest">
+<span>Oct 12, 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>15 Min Read</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">Retaining 90%: The Power of Active Recall</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Practical steps to implement the most effective memory techniques into your daily learning routine.</p>
+</div>
+</article>
+<!-- Article 5 -->
+<article class="group">
+<div class="relative overflow-hidden rounded-3xl aspect-[1.4] mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="group project" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJY-FaEXGN0kyI3HHUFWCHCpjEBuOwfRkP7Gtu767hb7cDdi6hbgn9d1YkLpxnjMPZ3rxKf1jPGBEfAw2LfIoXvZnXSSvk3X6hSfLcVE_-6zIHFI7x4Rp2ALldDeMfnVhBDxySqThbdbmW6Og7zySoAPJCp9LrfzSRll9E4ehaDe9bNKcgLEGCMMVf6QCRAj_CXDJZRRazK0C6wxXp4dWt0iKPy0pJvcLAGuTNuN3QleLJiN0Qdh_p-yBXFTxbdvHkLzHVokEGCVlc"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">Hive News</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4 text-[11px] font-bold text-outline uppercase tracking-widest">
+<span>Oct 08, 2025</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>4 Min Read</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-4 leading-tight group-hover:text-primary transition-colors">2026 Hive Scholars Global Grant Program</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2 mb-6">Hive Tutors is committing $2M to support underserved students in reaching their potential.</p>
+</div>
+</article>
+</div>
+<!-- Enhanced Pagination -->
+<div class="mt-24 flex items-center justify-between pt-12 border-t border-outline-variant/20">
+<button class="flex items-center gap-2 text-on-surface-variant font-bold text-sm hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span> Previous
+                        </button>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-white font-bold text-sm">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-sm font-bold">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-sm font-bold">3</button>
+<span class="px-2 text-outline-variant">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-sm font-bold">12</button>
+</div>
+<button class="flex items-center gap-2 text-on-surface-variant font-bold text-sm hover:text-primary transition-colors">
+                            Next <span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-on-surface text-white">
+<div class="max-w-7xl mx-auto px-6 py-20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+<div class="md:col-span-4">
+<span class="text-2xl font-extrabold font-headline block mb-6">Hive Tutors</span>
+<p class="text-white/60 text-sm leading-relaxed max-w-xs mb-8">
+                        The world's most sophisticated platform for adaptive learning and elite professional mentorship.
+                    </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-lg">mail</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2 md:col-start-6">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-8">Company</h4>
+<ul class="space-y-4 text-white/60 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">For Tutors</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Programs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-8">Support</h4>
+<ul class="space-y-4 text-white/60 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Help Center</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-bold text-sm uppercase tracking-widest mb-8">Newsletter</h4>
+<p class="text-white/60 text-xs mb-6">Join 50,000+ professionals getting weekly insights.</p>
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-xl py-3 px-4 text-sm focus:ring-primary outline-none" placeholder="Email address" type="email"/>
+<button class="absolute right-2 top-2 bottom-2 bg-primary px-3 rounded-lg hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-white/40 text-[11px] font-bold uppercase tracking-widest">© 2026 Hive Tutors. Crafted for Excellence.</p>
+<div class="flex gap-8 text-[11px] font-bold uppercase tracking-widest text-white/40">
+<a class="hover:text-white transition-colors" href="#">Security</a>
+<a class="hover:text-white transition-colors" href="#">Accessibility</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

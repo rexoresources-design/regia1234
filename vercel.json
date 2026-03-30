@@ -1,0 +1,45 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/site/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/site/about/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/site/services/index.html"
+    },
+    {
+      "source": "/service-detail",
+      "destination": "/site/service-detail/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/site/blog/index.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/site/faq/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/site/contact/index.html"
+    }
+  ]
+}

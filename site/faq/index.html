@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Hive Tutors</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#f7f9fc",
+              "surface-container-lowest": "#ffffff",
+              "primary": "#005bbe",
+              "primary-container": "#4b90ff",
+              "tertiary": "#8e4e00",
+              "surface-container": "#eceef1",
+              "surface-container-low": "#f2f4f7",
+              "inverse-surface": "#2d3133",
+              "inverse-primary": "#acc7ff",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#b9c0fd",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "on-surface": "#191c1e",
+              "on-tertiary-fixed-variant": "#6c3a00",
+              "on-primary-container": "#00295d",
+              "background": "#f7f9fc",
+              "on-primary-fixed-variant": "#004492",
+              "on-surface-variant": "#424753",
+              "on-background": "#191c1e",
+              "on-secondary-fixed-variant": "#3b4377",
+              "on-secondary-container": "#454d82",
+              "surface-dim": "#d8dadd",
+              "surface-container-high": "#e6e8eb",
+              "surface": "#f7f9fc",
+              "secondary-fixed": "#dfe0ff",
+              "on-primary-fixed": "#001a40",
+              "secondary-fixed-dim": "#bcc3ff",
+              "inverse-on-surface": "#eff1f4",
+              "on-primary": "#ffffff",
+              "surface-tint": "#005bbe",
+              "on-tertiary-fixed": "#2e1500",
+              "primary-fixed-dim": "#acc7ff",
+              "primary-fixed": "#d7e2ff",
+              "on-secondary-fixed": "#0e1549",
+              "secondary": "#535a91",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#d97a00",
+              "surface-variant": "#e0e3e6",
+              "tertiary-fixed": "#ffdcc1",
+              "surface-container-highest": "#e0e3e6",
+              "outline": "#727785",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "outline-variant": "#c2c6d5",
+              "tertiary-fixed-dim": "#ffb779",
+              "on-tertiary-container": "#442200"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #005bbe, #4b90ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+        .accordion-item.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 91, 190, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 z-50 w-full bg-white/80 glass-nav shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-headline font-bold tracking-tight text-on-surface">Hive Tutors</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary font-label text-sm font-medium transition-all duration-300" href="#">Programs</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm font-medium transition-all duration-300" href="#">For Tutors</a>
+<a class="text-on-surface-variant hover:text-primary font-label text-sm font-medium transition-all duration-300" href="#">About</a>
+<a class="text-primary font-headline font-bold border-b-2 border-primary text-sm font-medium transition-all duration-300" href="#">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:text-primary px-4 py-2 font-label text-sm font-medium transition-all duration-300">Login</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-label text-sm font-semibold transition-all duration-200 hover:scale-95">Register</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<header class="text-center mb-12">
+<span class="inline-block py-1 px-4 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold tracking-wider uppercase mb-4">Support Center</span>
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface mb-6 tracking-tight">How can we <span class="text-gradient">help you grow?</span></h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed mb-10">Everything you need to know about the Hive Tutors ecosystem. Find answers for students, parents, and prospective educators.</p>
+<!-- Search Bar -->
+<div class="max-w-2xl mx-auto relative">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full py-5 pl-14 pr-6 bg-surface-container-lowest border-none rounded-2xl premium-shadow text-on-surface placeholder:text-outline focus:ring-2 focus:ring-primary/20 transition-all text-base" placeholder="Search for answers (e.g., 'enrollment', 'payment', 'STEM')..." type="text"/>
+<div class="absolute inset-y-2 right-2 hidden sm:block">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-bold text-sm h-full hover:bg-primary-container transition-colors">Search</button>
+</div>
+</div>
+</header>
+<!-- Category Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-outline-variant/10 border premium-shadow hover:translate-y-[-4px] transition-all duration-300 group cursor-pointer">
+<div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white text-3xl" data-icon="school">school</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-2">For Students</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Admissions, program structures, and platform navigation for the next generation of leaders.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                    View 12 Questions 
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-outline-variant/10 border premium-shadow hover:translate-y-[-4px] transition-all duration-300 group cursor-pointer">
+<div class="w-14 h-14 bg-secondary-container/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-3xl" data-icon="family_restroom">family_restroom</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-2">For Parents</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Progress tracking, billing, and safety protocols to ensure peace of mind during the journey.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                    View 8 Questions 
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl border-outline-variant/10 border premium-shadow hover:translate-y-[-4px] transition-all duration-300 group cursor-pointer">
+<div class="w-14 h-14 bg-tertiary-fixed/40 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-tertiary-container transition-colors">
+<span class="material-symbols-outlined text-tertiary group-hover:text-white text-3xl" data-icon="work">work</span>
+</div>
+<h3 class="text-xl font-headline font-bold mb-2">For Tutors</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Application process, compensation models, and elite pedagogy tools for educators.</p>
+<div class="flex items-center gap-2 text-primary font-bold text-sm">
+                    View 15 Questions 
+                    <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- FAQ Content Area -->
+<div class="max-w-4xl mx-auto space-y-16">
+<!-- Section: Admissions & Programs -->
+<div class="category-section">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface flex items-center gap-3">
+<span class="w-1.5 h-8 bg-primary rounded-full"></span>
+                        Admissions &amp; Programs
+                    </h2>
+</div>
+<div class="space-y-4">
+<!-- Premium Accordion Item 1 -->
+<div class="accordion-item active bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">How do I enroll in a Hive Tutors program?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                Simply click the "Register" button in the top navigation bar. You'll complete a brief assessment that helps our AI match your learning style with our elite tutor pool. The entire process takes less than 10 minutes.
+                            </div>
+</div>
+</div>
+<!-- Premium Accordion Item 2 -->
+<div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">What subjects are covered in the core curriculum?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                Our primary focus is STEM (Mathematics, Physics, Computer Science) and Humanities (English Literature, History, Philosophy). We offer specialized tracks for AP, IB, and A-Level examinations.
+                            </div>
+</div>
+</div>
+<!-- Premium Accordion Item 3 -->
+<div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">Are classes held live or pre-recorded?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                We believe in the power of interaction. 100% of our core sessions are live, one-on-one video calls. However, students gain access to a library of high-fidelity supplementary recordings and hex-grid resources.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Tutor Applications -->
+<div class="category-section">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-headline font-bold text-on-surface flex items-center gap-3">
+<span class="w-1.5 h-8 bg-tertiary-container rounded-full"></span>
+                        Tutor Applications
+                    </h2>
+</div>
+<div class="space-y-4">
+<div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">What qualifications are required to become a Hive Tutor?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                We require all tutors to hold at least a Master's degree in their subject area or have 5+ years of professional teaching experience. The selection process includes a background check, pedagogy assessment, and a live teaching demo.
+                            </div>
+</div>
+</div>
+<div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">How does the payment cycle work for educators?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                Tutors are paid bi-weekly via direct deposit. We offer competitive hourly rates plus bonuses based on student retention and feedback scores.
+                            </div>
+</div>
+</div>
+<div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 premium-shadow transition-all overflow-hidden">
+<button class="w-full flex justify-between items-center p-6 text-left focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+<span class="text-lg font-bold text-on-surface pr-4">Can I set my own working hours?</span>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 arrow-icon transition-transform duration-300">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</button>
+<div class="accordion-content px-6">
+<div class="pt-2 text-on-surface-variant leading-relaxed max-w-3xl border-t border-surface-container-low pt-6">
+                                Yes, the Hive platform allows for complete schedule flexibility. You can set recurring availability or open blocks of time on a weekly basis through the Tutor Dashboard.
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<section class="mt-32 relative overflow-hidden rounded-[2.5rem] bg-on-primary-fixed text-on-primary premium-shadow">
+<!-- Decorative Hexagons Background -->
+<div class="absolute top-0 right-0 opacity-5 -mr-20 -mt-20">
+<span class="material-symbols-outlined text-[400px]" data-icon="hexagon" data-weight="fill" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+</div>
+<div class="relative z-10 px-8 py-16 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="text-4xl font-headline font-extrabold mb-6 leading-tight">Still have questions that we haven't reached yet?</h2>
+<p class="text-primary-fixed-dim text-lg mb-8 opacity-90">Our dedicated student success team is available 24/7 to guide you through your learning journey. No question is too small for our hive.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline font-bold hover:bg-primary-container transition-all flex items-center gap-2 premium-shadow">
+                            Contact Support
+                            <span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-headline font-bold hover:bg-white/20 transition-all">
+                            Live Chat
+                        </button>
+</div>
+</div>
+<div class="flex -space-x-4 relative">
+<div class="w-24 h-24 rounded-2xl bg-surface-container-lowest overflow-hidden border-4 border-on-primary-fixed premium-shadow transform -rotate-6 z-10">
+<img alt="Support Agent Sarah" class="w-full h-full object-cover" data-alt="portrait of a smiling young professional woman with glasses in a bright modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA0tAhag2HCrZcHBgOwf74ycIFLwXUkSbcgheoKJEgbxEGca4zi6oKir8_5r70r_m86BOJ_p5zHf9ftZoPNMe1skgVjQM-QUA9_MNcUuXMfj2VXCJpRsjq5lrK1DTEjcykUCtsurMhaubdwEkjeSJDa5ulbxPIHmXpuTB2XsaWXi5-f_ODFjIjK1Va-aBb6xiWMWqOXkDYYSv-wJYqXoVjsSlnLi-dWJKNbvWnybHLcfPTkzSbAWw4ckeQ-Cmk1ggpg75ILOXYG7kW"/>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-surface-container-lowest overflow-hidden border-4 border-on-primary-fixed premium-shadow z-20">
+<img alt="Support Agent David" class="w-full h-full object-cover" data-alt="close-up of a friendly man with a short beard smiling warmly towards the camera in daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7qXA5A53jXD5O3ROGnzjptZlbEKZesZ87QeocMB9mjQygiLoPnRar7aqQL_9gJHJW19t1b7fpXT7ODbSxfhLmLW50MqaXPlNYCmZVIpi0xfTgFxR9xRlhq7oTgSw5uYjoL9F9djvPWOCd6cWFtJeIt8-TA4MEB1R9GFrfengVwwdczGxIQd3nzzGXGEAO9JYiiwNYS89rlUC5eN4pIabtnk7tIlrwGU5vrNUctLn4uNuBpbEdlIc4S8UUv-2Uim0VohAykr0uCmW8"/>
+</div>
+<div class="w-24 h-24 rounded-2xl bg-surface-container-lowest overflow-hidden border-4 border-on-primary-fixed premium-shadow transform rotate-6 z-10">
+<img alt="Support Agent Mia" class="w-full h-full object-cover" data-alt="professional woman of color smiling confidently with crossed arms in a minimalist tech office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVhxwoNWDz05XrS0gEFgiS7QvLIUOoPeqhWOxeHKiSDMfUs7zbWNYJfdeo0NK78McNbgJA8v7Q13VYzviQB-yiozaT-pMyA5J941b_ItP6qXHT_OgkVOlqeeBUTNMf_1_iKU4SKqRqqS8ExNIaSdQUV3dPJqqPgu_1zsFHtaMtvibA7J7os7HdLgGlBPuBcO8nzsk78t9iRIzzWP0zUl0HGKo8bZg1GbioQy8DKR7UVxt79AfWYreunPZfZlb3Spu7k8e_Bog4lCEV"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-6 py-16 max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="text-xl font-headline font-bold text-on-surface">Hive Tutors</div>
+<p class="text-on-surface-variant text-sm leading-relaxed">Illuminating the path to academic excellence through collective intelligence and elite mentorship.</p>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-6">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-primary font-bold text-sm underline decoration-2 underline-offset-4" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary text-sm transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-6">Connect</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 py-8 border-t border-outline-variant/10">
+<p class="text-on-surface-variant text-sm text-center">© 2026 Hive Tutors. All rights reserved.</p>
+</div>
+</footer>
+</body></html>
