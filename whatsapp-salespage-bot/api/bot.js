@@ -1,8 +1,10 @@
 const RESPONSE_MODE = process.env.RESPONSE_MODE || 'whatsauto';
 const BOT_SECRET = process.env.BOT_SECRET || '';
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY || '';
-const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-3-5-sonnet-20241022';
+const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6-20260217';
 const PREVIEW_EXPIRY_MINUTES = Number(process.env.PREVIEW_EXPIRY_MINUTES || 30);
+const CLAUDE_TIMEOUT_MS = Number(process.env.CLAUDE_TIMEOUT_MS || 12000);
+const CLAUDE_MAX_TOKENS = Number(process.env.CLAUDE_MAX_TOKENS || 2200);
 
 function sendBotResponse(res, message) {
   if (RESPONSE_MODE === 'autoresponder') {
@@ -49,10 +51,12 @@ function hasEnoughSalesPageDetails(message) {
     'whatsapp',
     'offer',
     'selling',
-    'brand'
+    'brand',
+    'what i sell',
+    'main benefits'
   ];
   const matched = signals.filter((signal) => lower.includes(signal)).length;
-  return message.length > 120 && matched >= 3;
+  return message.length > 100 && matched >= 3;
 }
 
 function extractBusinessName(message, sender) {
@@ -68,16 +72,27 @@ function needMoreDetailsReply() {
   return `Thank you. Please send the full sales page details in one message so I can prepare your preview properly:\n\nBusiness/product name:\nWhat you sell:\nPrice/offer:\nMain benefits:\nTarget audience:\nWhatsApp number:\nBrand colour or style:\n\nAfter that, I’ll prepare the preview link.`;
 }
 
+function stripCodeFence(text) {
+  return String(text || '')
+    .replace(/^```(?:html)?\s*/i, '')
+    .replace(/```$/i, '')
+    .trim();
+}
+
 async function generateSalesPageWithClaude({ businessName, customerMessage, expiryIso }) {
   if (!ANTHROPIC_API_KEY) {
     return fallbackSalesPageHtml({ businessName, customerMessage, expiryIso });
   }
 
-  const prompt = `You are a senior Nigerian conversion copywriter and web designer for Regia Digitals. Create a premium high-converting one-page sales page in clean HTML only.\n\nRules:\n- Return only the HTML that should be placed inside a WordPress page.\n- No markdown. No code fences.\n- Use inline CSS only.\n- Make it mobile-friendly, clean, premium, persuasive, and business-ready.\n- Do not mention WordPress, Claude, AI, Vercel, or automation.\n- Use Nigerian business-friendly English.\n- Include hero, pain/problem, solution, benefits, offer, why choose us, FAQ, and CTA sections.\n- Use the client details below.\n- Add a visible note near the top: This preview link expires in ${PREVIEW_EXPIRY_MINUTES} minutes.\n- Include this exact expiry wrapper script at the end of the HTML, replacing nothing:\n<script>\n(function(){\n  var expiry = new Date('${expiryIso}').getTime();\n  function checkExpiry(){\n    if(Date.now() > expiry){\n      document.body.innerHTML = '<main style="font-family:Arial,sans-serif;min-height:80vh;display:flex;align-items:center;justify-content:center;padding:30px;background:#111827;color:#fff;text-align:center;"><div><h1 style="font-size:38px;margin-bottom:12px;">Preview Expired</h1><p style="font-size:18px;max-width:620px;line-height:1.6;">This sales page preview has expired. Please return to WhatsApp to request a fresh preview or speak with Regia Digitals.</p></div></main>';\n    }\n  }\n  checkExpiry();\n  setInterval(checkExpiry, 30000);\n})();\n</script>\n\nClient/business name: ${businessName}\nClient WhatsApp message/details:\n${customerMessage}`;
+  const prompt = `You are a senior Nigerian conversion copywriter and web designer for Regia Digitals. Create a premium high-converting one-page sales page in clean HTML only.\n\nRules:\n- Return only the HTML that should be placed inside a WordPress page.\n- No markdown. No code fences.\n- Use inline CSS only.\n- Make it mobile-friendly, clean, premium, persuasive, and business-ready.\n- Do not mention WordPress, Claude, AI, Vercel, or automation.\n- Use Nigerian business-friendly English.\n- Include hero, pain/problem, solution, benefits, offer, why choose us, FAQ, and CTA sections.\n- Keep the HTML compact enough to generate quickly.\n- Use the client details below.\n- Add a visible note near the top: This preview link expires in ${PREVIEW_EXPIRY_MINUTES} minutes.\n- Include this exact expiry wrapper script at the end of the HTML:\n<script>\n(function(){\n  var expiry = new Date('${expiryIso}').getTime();\n  function checkExpiry(){\n    if(Date.now() > expiry){\n      document.body.innerHTML = '<main style="font-family:Arial,sans-serif;min-height:80vh;display:flex;align-items:center;justify-content:center;padding:30px;background:#111827;color:#fff;text-align:center;"><div><h1 style="font-size:38px;margin-bottom:12px;">Preview Expired</h1><p style="font-size:18px;max-width:620px;line-height:1.6;">This sales page preview has expired. Please return to WhatsApp to request a fresh preview or speak with Regia Digitals.</p></div></main>';\n    }\n  }\n  checkExpiry();\n  setInterval(checkExpiry, 30000);\n})();\n</script>\n\nClient/business name: ${businessName}\nClient WhatsApp message/details:\n${customerMessage}`;
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), CLAUDE_TIMEOUT_MS);
 
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
+      signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': ANTHROPIC_API_KEY,
@@ -85,22 +100,25 @@ async function generateSalesPageWithClaude({ businessName, customerMessage, expi
       },
       body: JSON.stringify({
         model: ANTHROPIC_MODEL,
-        max_tokens: 4000,
-        temperature: 0.6,
+        max_tokens: CLAUDE_MAX_TOKENS,
+        temperature: 0.55,
         messages: [{ role: 'user', content: prompt }]
       })
     });
 
+    clearTimeout(timeout);
+
     const data = await response.json().catch(() => ({}));
     if (!response.ok) {
-      console.error('Claude error:', data);
+      console.error('Claude error:', JSON.stringify(data));
       return fallbackSalesPageHtml({ businessName, customerMessage, expiryIso });
     }
 
-    const html = data?.content?.[0]?.text?.trim();
+    const html = stripCodeFence(data?.content?.[0]?.text);
     return html || fallbackSalesPageHtml({ businessName, customerMessage, expiryIso });
   } catch (error) {
-    console.error('Claude request failed:', error);
+    clearTimeout(timeout);
+    console.error('Claude request failed or timed out:', error?.message || error);
     return fallbackSalesPageHtml({ businessName, customerMessage, expiryIso });
   }
 }
@@ -210,6 +228,7 @@ export default async function handler(req, res) {
   const wpResult = await createWordPressPage({ title, content: html, slug });
 
   if (!wpResult.ok) {
+    console.error('WordPress create page failed:', wpResult.error);
     return sendBotResponse(res, 'Thank you. I’ve received the details. Your sales page preview is being prepared now. A team member will send your preview link shortly.');
   }
 
