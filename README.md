@@ -26,7 +26,14 @@ Recommended Vercel environment variables:
 BOT_SECRET=regia12345
 ANTHROPIC_API_KEY=your_anthropic_key
 ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+PREVIEW_EXPIRY_MINUTES=30
+WP_SITE_URL=https://your-wordpress-site.com
+WP_USERNAME=your-wordpress-username
+WP_APP_PASSWORD=your-wordpress-application-password
+WP_DEFAULT_STATUS=publish
 ```
+
+The bot keeps the WhatsApp conversation focused on sales pages. It collects the business/product details, creates a WordPress preview when enough information is available, sends the preview link, and after the preview window asks for payment and transfers the customer to a human agent.
 
 The Android app should point each server-backed rule to:
 
