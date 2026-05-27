@@ -3,6 +3,8 @@
 !.vercelignore
 !README.md
 !vercel.json
+!api/
+!api/**
 !site/
 !site/**
 

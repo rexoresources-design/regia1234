@@ -11,6 +11,28 @@ This workspace did not contain a standard app project, so the deployable site wa
 - `/blog`
 - `/faq`
 - `/contact`
+- `/api/bot`
+- `/api/health`
+
+## WhatsApp Assistant Backend
+
+`POST /api/bot?secret=regia12345` receives messages from the Android Regia WhatsApp Assistant.
+
+If `ANTHROPIC_API_KEY` is configured in Vercel, the endpoint replies through Claude. If Claude is not configured or fails, it returns a safe fallback reply so the Android app does not break.
+
+Recommended Vercel environment variables:
+
+```txt
+BOT_SECRET=regia12345
+ANTHROPIC_API_KEY=your_anthropic_key
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+```
+
+The Android app should point each server-backed rule to:
+
+```txt
+https://regia1234.vercel.app/api/bot?secret=regia12345
+```
 
 ## Files prepared for deployment
 
