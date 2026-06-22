@@ -1,4 +1,5 @@
 *
+!index.html
 !site/
 !site/**
 !vercel.json
@@ -7,3 +8,5 @@
 !api/**
 !whatsapp-salespage-bot/
 !whatsapp-salespage-bot/**
+!cerave-deploy/
+!cerave-deploy/**
