@@ -10,180 +10,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-html{background:#16130f}*{box-sizing:border-box}body{margin:0;background:#fff4e7;color:#16110d;font-family:Arial,sans-serif;overflow-x:hidden}.nav{position:fixed;top:14px;left:4%;right:4%;z-index:120;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:rgba(255,244,231,.92);border-radius:999px}.nav a{text-decoration:none;color:#16110d;font-weight:700}.hero{min-height:100vh;background:linear-gradient(115deg,#fff5e7,#ffd08c 45%,#ff7a00);overflow:hidden}.hero-grid{width:min(1280px,92%);margin:auto;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:100vh;padding:110px 0 60px}.display{font-family:Arial Black,Arial,sans-serif;text-transform:uppercase;line-height:.9}.hero h1{font-size:clamp(64px,10vw,150px);margin:0}.hero h1 span{display:block}.hero-visual{position:relative;height:700px}.hero-product{position:absolute;left:50%;top:50%;width:min(520px,90%);transform:translate(-50%,-50%);mix-blend-mode:multiply}@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-visual{height:560px}.nav-links a:not(.nav-buy){display:none}}@media(max-width:600px){.hero h1{font-size:19vw}.hero-grid{padding-top:110px}.hero-visual{height:500px}}
+:root{--orange:#ff7a00;--orange2:#ff5200;--amber:#ffb000;--cream:#fff4e7;--ink:#16110d;--dark:#16130f;--white:#fff;--line:rgba(22,17,13,.18);--max:1280px}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--dark)}body{margin:0;color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;background:var(--cream)}a{color:inherit}.shell{width:min(var(--max),92%);margin:auto}.display{font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.065em;line-height:.88}.eyebrow{margin:0 0 18px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}.eyebrow.light{color:#ffd2ae}.progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:150;background:transparent}.progress span{display:block;width:0;height:100%;background:#111;box-shadow:0 0 22px rgba(0,0,0,.25)}.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:120;width:min(1200px,92%);display:flex;align-items:center;justify-content:space-between;padding:13px 16px 13px 20px;border:1px solid rgba(255,255,255,.35);background:rgba(255,244,231,.68);backdrop-filter:blur(18px);border-radius:999px;box-shadow:0 18px 55px rgba(30,16,4,.12)}.brand{text-decoration:none;font-family:'Archivo Black';font-size:15px;letter-spacing:-.04em}.nav-links{display:flex;align-items:center;gap:6px}.nav-links a{text-decoration:none;font-size:12px;font-weight:700;padding:9px 11px;border-radius:999px}.nav-buy{background:var(--ink);color:#fff}.hero{min-height:110vh;position:relative;overflow:hidden;background:linear-gradient(115deg,#fff5e7 0%,#ffd08c 42%,#ff7a00 100%)}.hero-grid{min-height:110vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px;padding:120px 0 70px;position:relative;z-index:4}.hero-copy{position:relative;z-index:5}.hero h1{font-size:clamp(74px,10vw,158px);margin:0}.hero h1 span{display:block}.outline{color:transparent;-webkit-text-stroke:2px var(--ink)}.hero-intro{font-size:clamp(17px,1.65vw,22px);line-height:1.65;max-width:600px}.hero-actions,.final-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 20px;text-decoration:none;font-weight:800;border:2px solid var(--ink);transition:transform .25s,background .25s,color .25s}.button.dark{background:var(--ink);color:#fff}.button.light{background:transparent}.hero-meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.hero-visual{position:relative;height:820px;perspective:1200px}.hero-product{position:absolute;left:50%;top:50%;width:min(540px,86%);transform:translate(-50%,-50%) rotate(-6deg);mix-blend-mode:multiply;filter:drop-shadow(0 42px 44px rgba(74,28,0,.22));z-index:5;will-change:transform}.sun{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff7c9,#ffb000 54%,#ff6b00 100%);filter:blur(.2px)}.sun-one{width:850px;height:850px;right:-220px;top:-250px;opacity:.78}.sun-two{width:330px;height:330px;left:-150px;bottom:-130px;opacity:.35}.heat-lines{position:absolute;inset:10%;background:repeating-radial-gradient(circle at 50% 50%,transparent 0 24px,rgba(255,255,255,.26) 25px 26px);border-radius:50%;filter:blur(.2px)}.orbit{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid rgba(22,17,13,.28);transform:translate(-50%,-50%)}.orbit-a{width:610px;height:610px}.orbit-b{width:760px;height:760px;opacity:.45}.orbit i{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--ink);left:50%;top:-6px}.floating-note{position:absolute;padding:11px 14px;border-radius:999px;background:rgba(255,255,255,.76);backdrop-filter:blur(10px);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;z-index:7;box-shadow:0 12px 35px rgba(83,28,0,.11)}.note-one{left:1%;top:26%}.note-two{right:2%;bottom:26%}.scroll-note{position:absolute;right:2vw;top:47%;writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.22em;font-size:10px;font-weight:700}.statement{min-height:100vh;display:grid;place-items:center;background:var(--dark);color:#fff;overflow:hidden}.statement-inner{position:relative}.statement-kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#ffb56f}.statement h2{font-size:clamp(68px,13vw,206px);margin:18px 0}.statement h2 span{display:block}.statement-copy{position:absolute;right:2%;bottom:1%;max-width:360px;font-size:18px;line-height:1.6;color:#ffd8b8}.model-reveal{height:110vh;position:relative;overflow:hidden;background:#d9792b}.model-reveal img{width:100%;height:100%;object-fit:cover;object-position:center 34%;filter:saturate(.94) contrast(1.03);transform:scale(1.08)}.model-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,10,6,.68),rgba(16,10,6,.08) 60%),linear-gradient(180deg,transparent 50%,rgba(16,10,6,.5))}.model-copy{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff}.model-copy p{text-transform:uppercase;letter-spacing:.14em;font-weight:700}.model-copy h2{font-size:clamp(60px,9vw,132px);margin:8px 0;max-width:1000px}.formula{background:#1a120d;color:#fff;position:relative}.formula-heading{padding:120px 0 20px;display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:end}.formula-heading h2{font-size:clamp(58px,8vw,118px);margin:0}.formula-heading>p{font-size:18px;line-height:1.7;color:#dfc4ae}.formula-story{display:grid;grid-template-columns:.95fr 1.05fr}.formula-sticky{position:sticky;top:0;height:100vh;display:grid;place-items:center;overflow:hidden}.formula-disc{position:absolute;width:70vh;height:70vh;border-radius:50%;background:radial-gradient(circle,#ffb269 0,#ff7a00 52%,transparent 72%);filter:blur(4px);transition:background .55s}.formula-product{width:min(470px,72%);mix-blend-mode:screen;filter:drop-shadow(0 40px 50px rgba(0,0,0,.38));position:relative;z-index:3}.formula-label{position:absolute;left:50%;bottom:32px;transform:translateX(-50%);width:min(560px,88%);padding:17px 20px;border-top:1px solid rgba(255,255,255,.34);text-align:center}.formula-label strong{display:block;font-family:'Archivo Black';text-transform:uppercase;font-size:22px}.formula-label span{display:block;margin-top:7px;color:#dfc4ae;font-size:13px}.formula-steps{padding:18vh 0 22vh}.formula-step{min-height:82vh;padding:42px;border-left:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;justify-content:center}.formula-step>span{font-family:'Archivo Black';font-size:72px;color:var(--orange)}.formula-step h3{font-family:'Archivo Black';text-transform:uppercase;font-size:clamp(46px,6vw,84px);line-height:.92;margin:12px 0}.formula-step p{font-size:20px;line-height:1.7;color:#dfc4ae;max-width:560px}.metrics{background:#fff;color:var(--ink);padding:120px 0 55px}.metrics-top h2{font-size:clamp(62px,9vw,130px);margin:0 0 60px}.metric-band{display:grid;grid-template-columns:repeat(4,1fr);border-block:2px solid var(--ink)}.metric-item{padding:36px 4vw 42px;border-right:1px solid var(--line)}.metric-item:last-child{border-right:0}.metric-item strong{display:block;font-family:'Archivo Black';font-size:clamp(62px,8vw,112px);line-height:.9}.metric-item span{display:block;margin-top:14px;max-width:190px;font-size:15px;line-height:1.5}.footnote{font-size:11px;color:#6f6258;margin-top:22px}.texture{display:grid;grid-template-columns:1.05fr .95fr;min-height:100vh;background:#f19a35}.texture-image{min-height:100vh;overflow:hidden}.texture-image img{width:100%;height:100%;object-fit:cover;object-position:center}.texture-copy{display:flex;flex-direction:column;justify-content:center;padding:8vw;color:#1c120b}.texture-copy h2{font-size:clamp(56px,7vw,108px);margin:0}.texture-copy>p{font-size:19px;line-height:1.7;max-width:540px}.texture-lines{display:grid;gap:0;margin-top:30px;border-top:2px solid #1c120b}.texture-lines span{padding:16px 0;border-bottom:1px solid rgba(28,18,11,.3);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.spectrum{min-height:120vh;background:linear-gradient(180deg,#fff3dc,#ffad4e);position:relative;overflow:hidden;padding:110px 0}.spectrum-title h2{font-size:clamp(60px,9vw,126px);margin:0;max-width:1000px}.spectrum-stage{position:relative;height:720px;margin-top:40px}.spectrum-word{position:absolute;font-family:'Archivo Black';font-size:clamp(90px,17vw,250px);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(22,17,13,.42)}.uva{left:0;top:5%}.uvb{right:0;top:34%}.hevis{left:16%;bottom:2%}.spectrum-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:250px;height:250px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--ink);color:#fff;font-family:'Archivo Black';font-size:25px;line-height:1.05;box-shadow:0 0 0 38px rgba(255,255,255,.35),0 0 0 76px rgba(255,255,255,.18)}.ritual{background:#17130f;color:#fff;padding:120px 0;position:relative}.ritual-head h2{font-size:clamp(60px,8vw,118px);margin:0 0 80px}.ritual-line{position:absolute;left:8%;right:8%;top:410px;height:2px;background:rgba(255,255,255,.3)}.ritual-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:34px}.ritual-steps article{position:relative;padding-top:34px}.ritual-steps article:before{content:"";position:absolute;top:-11px;left:0;width:22px;height:22px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 12px rgba(255,122,0,.15)}.ritual-steps span{font-family:'Archivo Black';color:#ffb46d;font-size:18px}.ritual-steps h3{font-family:'Archivo Black';font-size:36px;text-transform:uppercase;margin:10px 0}.ritual-steps p{color:#dfc4ae;line-height:1.6}.reviews{background:#ff7600;color:#1a1008;padding:120px 0}.reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}.reviews-title h2{font-size:clamp(60px,8vw,118px);margin:0}.review-quotes{border-top:3px solid #1a1008}.review-quotes blockquote{margin:0;padding:28px 0;border-bottom:1px solid rgba(26,16,8,.32);font-size:clamp(26px,3vw,42px);line-height:1.15;font-weight:700}.review-quotes cite{display:block;margin-top:14px;font-size:11px;font-style:normal;text-transform:uppercase;letter-spacing:.12em}.faq{background:#fff6ea;padding:120px 0}.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px}.faq-grid h2{font-size:clamp(58px,8vw,112px);margin:0}.faq-list{border-top:3px solid var(--ink)}details{padding:22px 0;border-bottom:1px solid rgba(22,17,13,.27)}summary{list-style:none;cursor:pointer;font-family:'Archivo Black';text-transform:uppercase;font-size:20px;display:flex;justify-content:space-between;gap:20px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:28px}details[open] summary:after{transform:rotate(45deg)}details p{line-height:1.7;max-width:720px}.final{min-height:100vh;background:#ff7a00;position:relative;overflow:hidden;display:grid;align-items:center}.final-grid{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;position:relative;z-index:4;padding:100px 0}.final-copy h2{font-size:clamp(64px,9vw,132px);margin:0}.final-copy>p{font-size:18px;line-height:1.6}.final-product{width:min(520px,90%);justify-self:end;mix-blend-mode:multiply;filter:drop-shadow(0 40px 45px rgba(68,22,0,.22));transform:rotate(6deg)}.final-sun{position:absolute;width:850px;height:850px;border-radius:50%;right:-180px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,#fff0a6 0,#ffb000 55%,transparent 70%)}footer{display:flex;justify-content:space-between;gap:20px;padding:24px 4vw 38px;background:#17130f;color:#bfa690;font-size:11px}@media(max-width:1000px){.hero-grid,.formula-heading,.formula-story,.texture,.reviews-grid,.faq-grid,.final-grid{grid-template-columns:1fr}.hero-grid{padding-top:125px}.hero-visual{height:680px}.statement-copy{position:relative;right:auto;bottom:auto}.formula-heading{gap:25px}.formula-sticky{position:relative;height:720px}.formula-steps{padding:0 0 80px}.formula-step{min-height:65vh;border-left:0;border-top:1px solid rgba(255,255,255,.2)}.metric-band{grid-template-columns:1fr 1fr}.metric-item:nth-child(2){border-right:0}.texture-image{min-height:75vh}.texture-copy{padding:80px 6vw}.ritual-line{display:none}.ritual-steps{grid-template-columns:1fr 1fr}.ritual-steps article{border-top:1px solid rgba(255,255,255,.2)}.ritual-steps article:before{top:-11px}.final-product{justify-self:center;max-width:540px}.nav-links a:not(.nav-buy){display:none}}@media(max-width:650px){.hero{min-height:auto}.hero-grid{min-height:auto}.hero h1{font-size:19vw}.hero-visual{height:560px}.hero-product{width:92%}.orbit-a{width:380px;height:380px}.orbit-b{width:500px;height:500px}.floating-note{font-size:9px}.note-one{left:0}.note-two{right:0}.statement{min-height:85vh}.statement h2{font-size:20vw}.model-reveal{height:85vh}.model-reveal img{object-position:62% center}.model-copy h2{font-size:16vw}.formula-heading h2,.metrics-top h2,.texture-copy h2,.spectrum-title h2,.ritual-head h2,.reviews-title h2,.faq-grid h2,.final-copy h2{font-size:16vw}.formula-sticky{height:620px}.formula-product{width:86%}.formula-step{padding:32px 0}.metric-band{grid-template-columns:1fr}.metric-item{border-right:0;border-bottom:1px solid var(--line)}.spectrum-stage{height:560px}.spectrum-center{width:190px;height:190px;font-size:19px}.ritual-steps{grid-template-columns:1fr}.reviews-grid,.faq-grid{gap:45px}.final-actions,.hero-actions{display:grid}.button{width:100%}footer{flex-direction:column}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-product,.formula-product,.model-reveal img{transform:none!important}}
 </style>
-<link rel="stylesheet" href="./style.css?v=20260623-3">
 </head>
 <body>
 <div class="progress" aria-hidden="true"><span></span></div>
 <nav class="nav" aria-label="Primary navigation">
   <a class="brand" href="#top">EUCERIN / SUN</a>
-  <div class="nav-links">
-    <a href="#formula">Formula</a>
-    <a href="#proof">Proof</a>
-    <a href="#ritual">Routine</a>
-    <a class="nav-buy" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">View on Jumia</a>
-  </div>
+  <div class="nav-links"><a href="#formula">Formula</a><a href="#proof">Proof</a><a href="#ritual">Routine</a><a class="nav-buy" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">View on Jumia</a></div>
 </nav>
-
 <main>
-<section class="hero" id="top">
-  <div class="sun sun-one"></div>
-  <div class="sun sun-two"></div>
-  <div class="hero-grid shell">
-    <div class="hero-copy">
-      <p class="eyebrow">FACE SUNSCREEN · OILY & ACNE-PRONE SKIN</p>
-      <h1 class="display"><span>NO SHINE.</span><span class="outline">FULL DEFENCE.</span></h1>
-      <p class="hero-intro">Very high SPF 50+ protection with an ultra-light, non-greasy gel-cream texture and an immediate dry-touch finish.</p>
-      <div class="hero-actions">
-        <a class="button dark magnetic" href="#formula">Explore the formula</a>
-        <a class="button light magnetic" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">Check availability</a>
-      </div>
-      <div class="hero-meta"><span>SPF 50+</span><span>50 ml</span><span>Fragrance-free</span></div>
-    </div>
-    <div class="hero-visual" id="heroVisual">
-      <div class="heat-lines" aria-hidden="true"></div>
-      <img class="hero-product" id="heroProduct" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream Dry Touch SPF 50+ bottle and box">
-      <div class="orbit orbit-a"><i></i></div>
-      <div class="orbit orbit-b"><i></i></div>
-      <div class="floating-note note-one">14h oil & shine control</div>
-      <div class="floating-note note-two">Immediate matt finish</div>
-    </div>
-  </div>
-  <div class="scroll-note">Scroll into the light</div>
-</section>
-
-<section class="statement">
-  <div class="shell statement-inner">
-    <p class="statement-kicker">Daily protection, redesigned for oily skin.</p>
-    <h2 class="display"><span>HIGH SUN.</span><span>LOW SHINE.</span></h2>
-    <p class="statement-copy">Advanced Spectral Technology helps defend against UVA, UVB and HEVIS light, while Oil Control Technology leaves skin with a fresh, dry-touch finish.</p>
-  </div>
-</section>
-
-<section class="model-reveal" aria-label="Product in use">
-  <img src="https://m.media-amazon.com/images/I/71VnCDqLSQL._AC_SL1500_.jpg" alt="Woman holding Eucerin Oil Control sunscreen">
-  <div class="model-overlay"></div>
-  <div class="model-copy shell">
-    <p>Made for shine-prone days.</p>
-    <h2 class="display">PROTECTION THAT<br>STAYS LIGHT.</h2>
-  </div>
-</section>
-
-<section class="formula" id="formula">
-  <div class="formula-heading shell">
-    <div>
-      <p class="eyebrow light">THE CLINICAL FORMULA</p>
-      <h2 class="display">FOUR SYSTEMS.<br>ONE DRY-TOUCH FINISH.</h2>
-    </div>
-    <p>As you scroll, the product remains in view while each active changes the visual atmosphere around it.</p>
-  </div>
-  <div class="formula-story shell">
-    <div class="formula-sticky">
-      <div class="formula-disc" id="formulaDisc"></div>
-      <img class="formula-product" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream">
-      <div class="formula-label"><strong id="formulaTitle">Licochalcone A</strong><span id="formulaSub">Antioxidant defence against UV and HEVIS-induced free radicals.</span></div>
-    </div>
-    <div class="formula-steps">
-      <article class="formula-step" data-tone="#ff8a00" data-title="Licochalcone A" data-sub="Antioxidant defence against UV and HEVIS-induced free radicals.">
-        <span>01</span><h3>Licochalcone A</h3><p>Helps neutralise free radicals triggered by UV and high-energy visible light.</p>
-      </article>
-      <article class="formula-step" data-tone="#f1d2aa" data-title="Glycyrrhetinic Acid" data-sub="Supports the skin’s own DNA repair mechanism.">
-        <span>02</span><h3>Glycyrrhetinic Acid</h3><p>Supports the skin’s own DNA repair mechanism after environmental stress.</p>
-      </article>
-      <article class="formula-step" data-tone="#ffb400" data-title="L-Carnitine" data-sub="Helps regulate sebum and reduce excess oil.">
-        <span>03</span><h3>L-Carnitine</h3><p>Works within Eucerin’s Oil Control Technology to help regulate excess sebum.</p>
-      </article>
-      <article class="formula-step" data-tone="#ff5f00" data-title="Mattifying Micro-Pigments" data-sub="Absorb lipids for an immediate dry-touch, anti-shine finish.">
-        <span>04</span><h3>Mattifying Micro-Pigments</h3><p>Help absorb surface lipids for a visibly fresher, less shiny finish.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="metrics" id="proof">
-  <div class="metrics-top shell">
-    <p class="eyebrow">CLINICAL PERFORMANCE</p>
-    <h2 class="display">MATTE THAT LASTS<br>BEYOND THE MORNING.</h2>
-  </div>
-  <div class="metric-band">
-    <div class="metric-item"><strong>14h</strong><span>Oil & shine control*</span></div>
-    <div class="metric-item"><strong>-86%</strong><span>Oil reduction with L-Carnitine**</span></div>
-    <div class="metric-item"><strong>50+</strong><span>Very high UVA/UVB protection</span></div>
-    <div class="metric-item"><strong>0</strong><span>Added fragrance</span></div>
-  </div>
-  <p class="footnote shell">*Clinical study, self-assessment after product application. **In-vitro data from Eucerin.</p>
-</section>
-
-<section class="texture">
-  <div class="texture-image">
-    <img src="https://m.media-amazon.com/images/I/61MH8IZddaL._AC_SL1500_.jpg" alt="Eucerin sunscreen held in hand with anti-shine and ultra-light texture benefits">
-  </div>
-  <div class="texture-copy">
-    <p class="eyebrow light">ULTRA-LIGHT GEL-CREAM</p>
-    <h2 class="display">DISAPPEARS FAST.<br>PROTECTS HARD.</h2>
-    <p>The fast-absorbing formula is non-sticky, non-greasy and designed to sit comfortably under makeup.</p>
-    <div class="texture-lines"><span>Fast-absorbing</span><span>Non-comedogenic</span><span>Suitable under makeup</span></div>
-  </div>
-</section>
-
-<section class="spectrum">
-  <div class="spectrum-title shell">
-    <h2 class="display">THE SUN DOESN’T HIT IN ONE DIRECTION.</h2>
-  </div>
-  <div class="spectrum-stage shell">
-    <div class="spectrum-word uva">UVA</div>
-    <div class="spectrum-word uvb">UVB</div>
-    <div class="spectrum-word hevis">HEVIS</div>
-    <div class="spectrum-center">ADVANCED<br>SPECTRAL<br>TECHNOLOGY</div>
-  </div>
-</section>
-
-<section class="ritual" id="ritual">
-  <div class="ritual-head shell"><p class="eyebrow">HOW TO USE</p><h2 class="display">YOUR FINAL MORNING STEP.</h2></div>
-  <div class="ritual-line"></div>
-  <div class="ritual-steps shell">
-    <article><span>01</span><h3>Cleanse</h3><p>Start with clean, dry skin.</p></article>
-    <article><span>02</span><h3>Moisturise</h3><p>Apply your regular day care if needed.</p></article>
-    <article><span>03</span><h3>Protect</h3><p>Apply generously to face, neck and décolleté.</p></article>
-    <article><span>04</span><h3>Reapply</h3><p>Reapply regularly, especially after sweating or towel-drying.</p></article>
-  </div>
-</section>
-
-<section class="reviews">
-  <div class="reviews-grid shell">
-    <div class="reviews-title"><p class="eyebrow light">VERIFIED FEEDBACK</p><h2 class="display">REAL SKIN.<br>REAL HEAT.<br>REAL RESULTS.</h2></div>
-    <div class="review-quotes">
-      <blockquote>“Very good for oily skin.”<cite>Verified Jumia purchase</cite></blockquote>
-      <blockquote>“Non-greasy and doesn’t leave a white cast.”<cite>Verified Jumia purchase</cite></blockquote>
-      <blockquote>“Best sunscreen ever.”<cite>Verified Jumia purchase</cite></blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="faq-grid shell">
-    <div><p class="eyebrow">QUESTIONS</p><h2 class="display">SUN CARE,<br>WITHOUT THE GUESSWORK.</h2></div>
-    <div class="faq-list">
-      <details><summary>Who is it designed for?</summary><p>It is formulated for oily, acne-prone and sensitive facial skin.</p></details>
-      <details><summary>Does it feel greasy?</summary><p>The ultra-light gel-cream is designed to absorb quickly with a dry-touch, anti-shine finish.</p></details>
-      <details><summary>Can it be used under makeup?</summary><p>Yes. The formula is designed to work as a comfortable base under makeup.</p></details>
-      <details><summary>When should it be applied?</summary><p>Use it every morning as the final step in your skincare routine, then reapply regularly during sun exposure.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="final-sun"></div>
-  <div class="final-grid shell">
-    <div class="final-copy"><p class="eyebrow light">EUCERIN SUN OIL CONTROL</p><h2 class="display">KEEP THE PROTECTION.<br>LOSE THE SHINE.</h2><p>50 ml · SPF 50+ · Dry-touch gel-cream for oily and acne-prone skin.</p><div class="final-actions"><a class="button dark magnetic" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">View on Jumia</a><a class="button light magnetic" href="#top">Replay</a></div></div>
-    <img class="final-product" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream Dry Touch SPF 50+">
-  </div>
-</section>
+<section class="hero" id="top"><div class="sun sun-one"></div><div class="sun sun-two"></div><div class="hero-grid shell"><div class="hero-copy"><p class="eyebrow">FACE SUNSCREEN · OILY & ACNE-PRONE SKIN</p><h1 class="display"><span>NO SHINE.</span><span class="outline">FULL DEFENCE.</span></h1><p class="hero-intro">Very high SPF 50+ protection with an ultra-light, non-greasy gel-cream texture and an immediate dry-touch finish.</p><div class="hero-actions"><a class="button dark magnetic" href="#formula">Explore the formula</a><a class="button light magnetic" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">Check availability</a></div><div class="hero-meta"><span>SPF 50+</span><span>50 ml</span><span>Fragrance-free</span></div></div><div class="hero-visual" id="heroVisual"><div class="heat-lines" aria-hidden="true"></div><img class="hero-product" id="heroProduct" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream Dry Touch SPF 50+ bottle and box"><div class="orbit orbit-a"><i></i></div><div class="orbit orbit-b"><i></i></div><div class="floating-note note-one">14h oil & shine control</div><div class="floating-note note-two">Immediate matt finish</div></div></div><div class="scroll-note">Scroll into the light</div></section>
+<section class="statement"><div class="shell statement-inner"><p class="statement-kicker">Daily protection, redesigned for oily skin.</p><h2 class="display"><span>HIGH SUN.</span><span>LOW SHINE.</span></h2><p class="statement-copy">Advanced Spectral Technology helps defend against UVA, UVB and HEVIS light, while Oil Control Technology leaves skin with a fresh, dry-touch finish.</p></div></section>
+<section class="model-reveal" aria-label="Product in use"><img src="https://m.media-amazon.com/images/I/71VnCDqLSQL._AC_SL1500_.jpg" alt="Woman holding Eucerin Oil Control sunscreen"><div class="model-overlay"></div><div class="model-copy shell"><p>Made for shine-prone days.</p><h2 class="display">PROTECTION THAT<br>STAYS LIGHT.</h2></div></section>
+<section class="formula" id="formula"><div class="formula-heading shell"><div><p class="eyebrow light">THE CLINICAL FORMULA</p><h2 class="display">FOUR SYSTEMS.<br>ONE DRY-TOUCH FINISH.</h2></div><p>As you scroll, the product remains in view while each active changes the visual atmosphere around it.</p></div><div class="formula-story shell"><div class="formula-sticky"><div class="formula-disc" id="formulaDisc"></div><img class="formula-product" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream"><div class="formula-label"><strong id="formulaTitle">Licochalcone A</strong><span id="formulaSub">Antioxidant defence against UV and HEVIS-induced free radicals.</span></div></div><div class="formula-steps"><article class="formula-step" data-tone="#ff8a00" data-title="Licochalcone A" data-sub="Antioxidant defence against UV and HEVIS-induced free radicals."><span>01</span><h3>Licochalcone A</h3><p>Helps neutralise free radicals triggered by UV and high-energy visible light.</p></article><article class="formula-step" data-tone="#f1d2aa" data-title="Glycyrrhetinic Acid" data-sub="Supports the skin’s own DNA repair mechanism."><span>02</span><h3>Glycyrrhetinic Acid</h3><p>Supports the skin’s own DNA repair mechanism after environmental stress.</p></article><article class="formula-step" data-tone="#ffb400" data-title="L-Carnitine" data-sub="Helps regulate sebum and reduce excess oil."><span>03</span><h3>L-Carnitine</h3><p>Works within Eucerin’s Oil Control Technology to help regulate excess sebum.</p></article><article class="formula-step" data-tone="#ff5f00" data-title="Mattifying Micro-Pigments" data-sub="Absorb lipids for an immediate dry-touch, anti-shine finish."><span>04</span><h3>Mattifying Micro-Pigments</h3><p>Help absorb surface lipids for a visibly fresher, less shiny finish.</p></article></div></div></section>
+<section class="metrics" id="proof"><div class="metrics-top shell"><p class="eyebrow">CLINICAL PERFORMANCE</p><h2 class="display">MATTE THAT LASTS<br>BEYOND THE MORNING.</h2></div><div class="metric-band"><div class="metric-item"><strong>14h</strong><span>Oil & shine control*</span></div><div class="metric-item"><strong>-86%</strong><span>Oil reduction with L-Carnitine**</span></div><div class="metric-item"><strong>50+</strong><span>Very high UVA/UVB protection</span></div><div class="metric-item"><strong>0</strong><span>Added fragrance</span></div></div><p class="footnote shell">*Clinical study, self-assessment after product application. **In-vitro data from Eucerin.</p></section>
+<section class="texture"><div class="texture-image"><img src="https://m.media-amazon.com/images/I/61MH8IZddaL._AC_SL1500_.jpg" alt="Eucerin sunscreen held in hand with anti-shine and ultra-light texture benefits"></div><div class="texture-copy"><p class="eyebrow light">ULTRA-LIGHT GEL-CREAM</p><h2 class="display">DISAPPEARS FAST.<br>PROTECTS HARD.</h2><p>The fast-absorbing formula is non-sticky, non-greasy and designed to sit comfortably under makeup.</p><div class="texture-lines"><span>Fast-absorbing</span><span>Non-comedogenic</span><span>Suitable under makeup</span></div></div></section>
+<section class="spectrum"><div class="spectrum-title shell"><h2 class="display">THE SUN DOESN’T HIT IN ONE DIRECTION.</h2></div><div class="spectrum-stage shell"><div class="spectrum-word uva">UVA</div><div class="spectrum-word uvb">UVB</div><div class="spectrum-word hevis">HEVIS</div><div class="spectrum-center">ADVANCED<br>SPECTRAL<br>TECHNOLOGY</div></div></section>
+<section class="ritual" id="ritual"><div class="ritual-head shell"><p class="eyebrow">HOW TO USE</p><h2 class="display">YOUR FINAL MORNING STEP.</h2></div><div class="ritual-line"></div><div class="ritual-steps shell"><article><span>01</span><h3>Cleanse</h3><p>Start with clean, dry skin.</p></article><article><span>02</span><h3>Moisturise</h3><p>Apply your regular day care if needed.</p></article><article><span>03</span><h3>Protect</h3><p>Apply generously to face, neck and décolleté.</p></article><article><span>04</span><h3>Reapply</h3><p>Reapply regularly, especially after sweating or towel-drying.</p></article></div></section>
+<section class="reviews"><div class="reviews-grid shell"><div class="reviews-title"><p class="eyebrow light">VERIFIED FEEDBACK</p><h2 class="display">REAL SKIN.<br>REAL HEAT.<br>REAL RESULTS.</h2></div><div class="review-quotes"><blockquote>“Very good for oily skin.”<cite>Verified Jumia purchase</cite></blockquote><blockquote>“Non-greasy and doesn’t leave a white cast.”<cite>Verified Jumia purchase</cite></blockquote><blockquote>“Best sunscreen ever.”<cite>Verified Jumia purchase</cite></blockquote></div></div></section>
+<section class="faq" id="faq"><div class="faq-grid shell"><div><p class="eyebrow">QUESTIONS</p><h2 class="display">SUN CARE,<br>WITHOUT THE GUESSWORK.</h2></div><div class="faq-list"><details><summary>Who is it designed for?</summary><p>It is formulated for oily, acne-prone and sensitive facial skin.</p></details><details><summary>Does it feel greasy?</summary><p>The ultra-light gel-cream is designed to absorb quickly with a dry-touch, anti-shine finish.</p></details><details><summary>Can it be used under makeup?</summary><p>Yes. The formula is designed to work as a comfortable base under makeup.</p></details><details><summary>When should it be applied?</summary><p>Use it every morning as the final step in your skincare routine, then reapply regularly during sun exposure.</p></details></div></div></section>
+<section class="final"><div class="final-sun"></div><div class="final-grid shell"><div class="final-copy"><p class="eyebrow light">EUCERIN SUN OIL CONTROL</p><h2 class="display">KEEP THE PROTECTION.<br>LOSE THE SHINE.</h2><p>50 ml · SPF 50+ · Dry-touch gel-cream for oily and acne-prone skin.</p><div class="final-actions"><a class="button dark magnetic" href="https://www.jumia.com.ng/eucerin-face-sunscreen-oil-control-gel-cream-dry-touch-spf-50-50ml-350932893.html" target="_blank" rel="noopener">View on Jumia</a><a class="button light magnetic" href="#top">Replay</a></div></div><img class="final-product" src="https://kuludonline.com/cdn/shop/files/48294_87f24c8e-885f-4cd7-989b-760b3bb1c541.jpg?v=1754838419&width=480" alt="Eucerin Sun Oil Control Gel-Cream Dry Touch SPF 50+"></div></section>
 </main>
 <footer><span>Concept experience by Regia Digitals.</span><span>Product names and marks belong to Eucerin / Beiersdorf.</span></footer>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="./script.js?v=20260623-3"></script>
+<script>
+(()=>{const q=(s,p=document)=>p.querySelector(s),qa=(s,p=document)=>[...p.querySelectorAll(s)],reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;addEventListener('scroll',()=>{const d=document.documentElement;q('.progress span').style.width=((d.scrollTop/(d.scrollHeight-d.clientHeight))*100||0)+'%'},{passive:true});if(!window.gsap||!window.ScrollTrigger||reduce)return;gsap.registerPlugin(ScrollTrigger);gsap.from('.hero-copy>*',{y:48,opacity:0,duration:1.05,stagger:.1,ease:'power4.out'});gsap.from('.hero-product',{scale:.78,rotation:-14,opacity:0,duration:1.35,ease:'power4.out'});gsap.to('.orbit-a',{rotation:360,duration:24,repeat:-1,ease:'none'});gsap.to('.orbit-b',{rotation:-360,duration:34,repeat:-1,ease:'none'});gsap.to('.hero-product',{yPercent:20,rotation:10,scale:.88,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1.2}});gsap.to('.sun-one',{x:-140,y:180,scale:1.15,scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});gsap.fromTo('.statement h2 span',{xPercent:i=>i?28:-28},{xPercent:0,scrollTrigger:{trigger:'.statement',start:'top 80%',end:'center center',scrub:1}});gsap.to('.model-reveal img',{scale:1,scrollTrigger:{trigger:'.model-reveal',start:'top bottom',end:'bottom top',scrub:1.1}});qa('.formula-step').forEach(step=>{ScrollTrigger.create({trigger:step,start:'top 55%',onEnter:()=>activate(step),onEnterBack:()=>activate(step)});gsap.from(step.children,{y:45,opacity:0,stagger:.08,scrollTrigger:{trigger:step,start:'top 80%'}})});function activate(step){q('#formulaTitle').textContent=step.dataset.title;q('#formulaSub').textContent=step.dataset.sub;const c=step.dataset.tone;gsap.to('#formulaDisc',{background:`radial-gradient(circle,${c} 0,${c}99 48%,transparent 72%)`,duration:.55});gsap.fromTo('.formula-product',{rotation:-10,scale:.94},{rotation:5,scale:1,duration:.7,ease:'power3.out'})}gsap.from('.metric-item',{y:50,opacity:0,stagger:.12,scrollTrigger:{trigger:'.metric-band',start:'top 78%'}});gsap.to('.texture-image img',{scale:1.08,yPercent:-5,scrollTrigger:{trigger:'.texture',start:'top bottom',end:'bottom top',scrub:1}});gsap.from('.texture-copy>*',{x:60,opacity:0,stagger:.1,scrollTrigger:{trigger:'.texture-copy',start:'top 75%'}});gsap.to('.uva',{xPercent:45,scrollTrigger:{trigger:'.spectrum',start:'top bottom',end:'bottom top',scrub:1}});gsap.to('.uvb',{xPercent:-38,scrollTrigger:{trigger:'.spectrum',start:'top bottom',end:'bottom top',scrub:1}});gsap.to('.hevis',{xPercent:30,scrollTrigger:{trigger:'.spectrum',start:'top bottom',end:'bottom top',scrub:1}});gsap.to('.spectrum-center',{rotation:360,scrollTrigger:{trigger:'.spectrum',start:'top 80%',end:'bottom 20%',scrub:1}});qa('.ritual-steps article').forEach((el,i)=>gsap.from(el,{y:55,opacity:0,delay:i*.05,scrollTrigger:{trigger:el,start:'top 84%'}}));qa('blockquote').forEach((el,i)=>gsap.from(el,{x:70,opacity:0,delay:i*.05,scrollTrigger:{trigger:el,start:'top 86%'}}));gsap.from('.final-copy>*',{y:50,opacity:0,stagger:.1,scrollTrigger:{trigger:'.final',start:'top 70%'}});gsap.from('.final-product',{x:100,rotation:18,opacity:0,scrollTrigger:{trigger:'.final',start:'top 70%'}});const vis=q('#heroVisual'),product=q('#heroProduct');vis.addEventListener('pointermove',e=>{const r=vis.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(product,{rotateY:x*18,rotateX:y*-12,x:x*26,y:y*18,duration:.35,ease:'power3.out'})});vis.addEventListener('pointerleave',()=>gsap.to(product,{rotateY:0,rotateX:0,x:0,y:0,duration:.75,ease:'elastic.out(1,.42)'}));qa('.magnetic').forEach(el=>{el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.12,y:(e.clientY-r.top-r.height/2)*.16,duration:.3})});el.addEventListener('pointerleave',()=>gsap.to(el,{x:0,y:0,duration:.55,ease:'elastic.out(1,.45)'}))})})();
+</script>
 </body>
 </html>
