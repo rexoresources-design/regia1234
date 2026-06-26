@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Confirmed! — Sun King Solar Fan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --primary:#FF6B00;--primary-dark:#CC5500;--primary-light:#FFF3E8;
+  --secondary:#1B4F72;--secondary-dark:#0D2B40;
+  --accent:#27AE60;--danger:#E74C3C;--gold:#F39C12;
+  --dark:#1C1C2E;--text:#2C3E50;--text-light:#5D6D7E;
+  --border:#E0E0E0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:#F4F6F9;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{text-decoration:none;color:inherit}
+.container{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* HEADER */
+.ty-header{background:var(--secondary-dark);padding:16px 20px;text-align:center}
+.ty-header .logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;color:#fff}
+.ty-header .logo span{color:var(--primary)}
+
+/* HERO */
+.ty-hero{background:linear-gradient(135deg,var(--accent),#2ECC71);padding:50px 20px;text-align:center;color:#fff}
+@keyframes pop-in{from{transform:scale(0)}to{transform:scale(1)}}
+.success-icon{width:100px;height:100px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:48px;margin:0 auto 20px;animation:pop-in .5s cubic-bezier(.34,1.56,.64,1) both}
+.ty-hero h1{font-size:30px;font-weight:900;margin-bottom:10px}
+.ty-hero p{font-size:15px;opacity:.9;max-width:500px;margin:0 auto;line-height:1.6}
+
+/* ORDER REF */
+.order-ref-bar{background:#fff;border-bottom:3px solid var(--accent);padding:14px 20px;text-align:center;font-size:14px;color:var(--text-light)}
+.order-ref-bar strong{color:var(--dark);font-family:'Montserrat',sans-serif;font-size:16px}
+
+/* MAIN */
+.ty-wrap{padding:36px 0 60px}
+
+.card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.07);margin-bottom:20px}
+.card h2{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.card h2 i{color:var(--primary)}
+
+/* NEXT STEPS */
+.steps-list{display:flex;flex-direction:column;gap:0}
+.next-step{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);position:relative}
+.next-step:last-child{border-bottom:none}
+.ns-num{width:36px;height:36px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;flex-shrink:0}
+.ns-text h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.ns-text p{font-size:13px;color:var(--text-light);line-height:1.5}
+.ns-time{margin-left:auto;font-size:12px;font-weight:700;color:var(--primary);white-space:nowrap;padding-top:2px}
+
+/* SUMMARY */
+.order-summary-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.order-summary-row:last-child{border-bottom:none}
+.order-summary-row span:first-child{color:var(--text-light)}
+.order-summary-row span:last-child{font-weight:700;color:var(--dark)}
+.order-summary-row.total span{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--primary)}
+
+/* SHARE */
+.share-box{background:var(--primary-light);border:1px solid #FFD4A8;border-radius:12px;padding:20px;text-align:center}
+.share-box h3{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.share-box p{font-size:13px;color:var(--text-light);margin-bottom:16px}
+.share-btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.share-btn{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:none;transition:all .2s}
+.share-btn.wa{background:#25D366;color:#fff}
+.share-btn.wa:hover{background:#128C7E}
+.share-btn.fb{background:#1877F2;color:#fff}
+.share-btn.fb:hover{background:#0D5BB5}
+.share-btn.copy{background:var(--secondary);color:#fff}
+.share-btn.copy:hover{background:var(--secondary-dark)}
+
+/* REFERRAL */
+.referral-box{background:linear-gradient(135deg,var(--secondary-dark),var(--secondary));border-radius:14px;padding:24px;text-align:center;color:#fff}
+.referral-box h3{font-size:16px;font-weight:800;margin-bottom:8px}
+.referral-box p{font-size:13px;opacity:.8;margin-bottom:16px;line-height:1.5}
+.referral-code{background:rgba(255,255,255,.15);border:2px dashed rgba(255,255,255,.4);border-radius:8px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;letter-spacing:4px;color:var(--gold);margin-bottom:14px;display:inline-block}
+.referral-box .ref-benefit{font-size:12px;background:rgba(39,174,96,.2);border:1px solid rgba(39,174,96,.4);border-radius:6px;padding:8px 14px;color:#6EE7A0;display:inline-block}
+
+/* TIPS */
+.tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tip-item{background:#FFF9F5;border:1px solid #FFE0C4;border-radius:10px;padding:14px;font-size:13px}
+.tip-item .tip-icon{font-size:22px;margin-bottom:8px;display:block}
+.tip-item h4{font-size:13px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.tip-item p{color:var(--text-light);line-height:1.5}
+
+/* GUARANTEE */
+.ty-guarantee{background:#F0FFF4;border:2px solid #C6F6D5;border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:center;margin-top:20px}
+.ty-guarantee i{font-size:28px;color:var(--accent);flex-shrink:0}
+.ty-guarantee p{font-size:13px;color:#276749;line-height:1.5}
+
+/* CONTACT */
+.contact-strip{background:#fff;border-top:3px solid var(--border);padding:20px;text-align:center;font-size:13px;color:var(--text-light);margin-top:20px;border-radius:12px}
+.contact-strip strong{color:var(--dark)}
+.wa-contact{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 20px;border-radius:8px;font-weight:700;font-size:13px;margin-top:12px;transition:all .2s}
+.wa-contact:hover{background:#128C7E}
+
+@media(max-width:560px){
+  .ty-hero h1{font-size:22px}
+  .tips-grid{grid-template-columns:1fr}
+  .share-btns{flex-direction:column;align-items:center}
+  .share-btn{width:200px;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="ty-header">
+  <div class="logo">☀️ Sun<span>King</span> Solar Fan Nigeria</div>
+</div>
+
+<!-- SUCCESS HERO -->
+<div class="ty-hero">
+  <div class="success-icon">🎉</div>
+  <h1>Your Order Is Confirmed!</h1>
+  <p>Thank you for choosing Sun King Solar. Your path to cool, NEPA-free living starts now. Here's everything you need to know.</p>
+</div>
+
+<!-- ORDER REFERENCE BAR -->
+<div class="order-ref-bar">
+  Order Reference: <strong id="orderRef">SKN-2024-XXXXXX</strong> &nbsp;|&nbsp; We'll SMS this to your phone shortly
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="ty-wrap">
+  <div class="container">
+
+    <!-- NEXT STEPS -->
+    <div class="card">
+      <h2><i class="fas fa-route"></i> What Happens Next</h2>
+      <div class="steps-list">
+        <div class="next-step">
+          <div class="ns-num">1</div>
+          <div class="ns-text"><h4>Confirmation Call</h4><p>Our customer care team will call your registered phone number to confirm your order details and delivery address.</p></div>
+          <div class="ns-time">Within 1–2 hrs</div>
+        </div>
+        <div class="next-step">
+          <div class="ns-num">2</div>
+          <div class="ns-text"><h4>Order Packed & Dispatched</h4><p>Your Sun King Solar Fan is carefully inspected, packaged, and handed to our courier partner for delivery to you.</p></div>
+          <div class="ns-time">Same/Next Day</div>
+        </div>
+        <div class="next-step">
+          <div class="ns-num">3</div>
+          <div class="ns-text"><h4>SMS Tracking Update</h4><p>You'll receive an SMS with tracking details so you know exactly where your order is at all times.</p></div>
+          <div class="ns-time">After dispatch</div>
+        </div>
+        <div class="next-step">
+          <div class="ns-num">4</div>
+          <div class="ns-text"><h4>Delivery to Your Door</h4><p>Your package arrives — inspect it, confirm it's in perfect condition, then pay (if you chose Pay on Delivery). Enjoy!</p></div>
+          <div class="ns-time" id="delivTime">1–5 days</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="card">
+      <h2><i class="fas fa-receipt"></i> Your Order Summary</h2>
+      <div class="order-summary-row"><span>Sun King Solar Fan 16" + 20W Panel</span><span>₦54,999</span></div>
+      <div class="order-summary-row" id="bundleRow" style="display:none"><span>Sun King Home Light Kit (Bundle)</span><span>₦17,999</span></div>
+      <div class="order-summary-row" style="color:var(--accent)"><span>🎁 Free Bonus: Solar Power Bank</span><span>FREE</span></div>
+      <div class="order-summary-row" style="color:var(--accent)"><span>🚚 Nationwide Delivery</span><span>FREE</span></div>
+      <div class="order-summary-row total"><span>Total Paid / Pay on Delivery</span><span id="tyTotal">₦54,999</span></div>
+    </div>
+
+    <!-- PRODUCT USAGE TIPS -->
+    <div class="card">
+      <h2><i class="fas fa-lightbulb"></i> Quick Setup Tips for Maximum Performance</h2>
+      <div class="tips-grid">
+        <div class="tip-item"><span class="tip-icon">☀️</span><h4>Best Panel Placement</h4><p>Face the solar panel directly south — this gets the most Nigerian sun exposure all day long.</p></div>
+        <div class="tip-item"><span class="tip-icon">🔋</span><h4>First Charge</h4><p>For best battery performance, fully charge the battery (6 hours in sun) before first use.</p></div>
+        <div class="tip-item"><span class="tip-icon">🌡️</span><h4>Optimal Fan Position</h4><p>Place the fan at a slight upward angle — it circulates air across the whole room more effectively.</p></div>
+        <div class="tip-item"><span class="tip-icon">🔌</span><h4>Rainy Season Backup</h4><p>During heavy overcast days, plug into AC (NEPA/generator) to top up the battery — your backup is always there.</p></div>
+      </div>
+    </div>
+
+    <!-- SHARE & EARN -->
+    <div class="card">
+      <div class="share-box">
+        <h3>🎁 Tell Your Friends — They'll Thank You</h3>
+        <p>Share the Sun King Solar Fan with people you know. Help them escape NEPA's heat too.</p>
+        <div class="share-btns">
+          <button class="share-btn wa" onclick="shareWA()"><i class="fab fa-whatsapp"></i> Share on WhatsApp</button>
+          <button class="share-btn fb" onclick="shareFB()"><i class="fab fa-facebook"></i> Share on Facebook</button>
+          <button class="share-btn copy" onclick="copyLink()"><i class="fas fa-copy"></i> Copy Link</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFERRAL PROGRAM -->
+    <div class="card">
+      <div class="referral-box">
+        <h3>💰 Earn ₦2,000 Per Referral!</h3>
+        <p>Share your unique referral code with friends and family. When they order using your code, you both get ₦2,000 off. It's our way of saying thank you for spreading the solar revolution!</p>
+        <div class="referral-code" id="refCode">SOLAR-XXXX</div>
+        <br>
+        <div class="ref-benefit">✓ You earn ₦2,000 credit &nbsp;|&nbsp; ✓ Your friend saves ₦2,000</div>
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="ty-guarantee">
+      <i class="fas fa-shield-alt"></i>
+      <p><strong>Remember — You're Covered:</strong> If anything is wrong with your product within 30 days, contact us immediately. We'll arrange a free replacement or full refund, no questions asked. Your satisfaction is 100% guaranteed.</p>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-strip">
+      <strong>Need Help? We're Here!</strong><br>
+      <span>Customer Care: Mon–Sat, 8am–8pm<br>Phone/WhatsApp: 0800-SUN-KING | Email: support@sunkingng.com</span><br>
+      <a href="https://wa.me/2348000000000?text=Hi%2C+I+just+ordered+the+Sun+King+Solar+Fan+and+need+help" target="_blank" class="wa-contact">
+        <i class="fab fa-whatsapp"></i> Chat With Us on WhatsApp
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div style="background:var(--secondary-dark);color:rgba(255,255,255,.4);text-align:center;padding:16px;font-size:12px">
+  © 2024 SunKing Solar Fan Nigeria. Thank you for your order! 🌞
+</div>
+
+<script>
+// Generate order ref & referral code
+(function(){
+  const ref = 'SKN-2024-' + Math.random().toString(36).substring(2,8).toUpperCase();
+  const el = document.getElementById('orderRef');
+  if(el) el.textContent = ref;
+
+  const rfEl = document.getElementById('refCode');
+  if(rfEl) rfEl.textContent = 'SOLAR-' + Math.random().toString(36).substring(2,6).toUpperCase();
+})();
+
+// Show bundle row if bundle was purchased
+if(window.location.search.includes('bundle=true')){
+  const br = document.getElementById('bundleRow');
+  if(br) br.style.display = 'flex';
+  const tot = document.getElementById('tyTotal');
+  if(tot) tot.textContent = '₦72,998';
+}
+
+// Sharing
+function shareWA(){
+  const msg = encodeURIComponent('I just ordered the Sun King Solar Fan from Nigeria\'s best solar store! No more NEPA stress 🌞 Get yours here: ' + window.location.origin + '/solar-fan-sales/');
+  window.open('https://wa.me/?text=' + msg, '_blank');
+}
+function shareFB(){
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/solar-fan-sales/'), '_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText(window.location.origin + '/solar-fan-sales/').then(()=>{
+    alert('Link copied! Share it with your friends.');
+  });
+}
+</script>
+</body>
+</html>

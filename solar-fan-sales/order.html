@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order — Sun King Solar Fan 16" | Secure Checkout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --primary:#FF6B00;--primary-dark:#CC5500;--primary-light:#FFF3E8;
+  --secondary:#1B4F72;--secondary-dark:#0D2B40;
+  --accent:#27AE60;--danger:#E74C3C;--gold:#F39C12;
+  --dark:#1C1C2E;--text:#2C3E50;--text-light:#5D6D7E;
+  --border:#E0E0E0;--white:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:#F4F6F9;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* TOP BAR */
+.order-topbar{background:var(--secondary-dark);color:#fff;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.order-topbar .logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px}
+.order-topbar .logo span{color:var(--primary)}
+.order-topbar .trust-badges{display:flex;gap:16px;font-size:12px;color:rgba(255,255,255,.75)}
+.order-topbar .trust-badges span{display:flex;align-items:center;gap:4px}
+.order-topbar .trust-badges i{color:var(--accent)}
+
+/* PROGRESS BAR */
+.progress-bar{background:var(--primary-light);border-bottom:2px solid var(--border);padding:14px 0}
+.progress-steps{display:flex;justify-content:center;align-items:center;gap:0}
+.p-step{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--text-light);position:relative;padding:0 24px}
+.p-step.active{color:var(--primary)}
+.p-step.done{color:var(--accent)}
+.p-step-num{width:28px;height:28px;border-radius:50%;border:2px solid currentColor;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px}
+.p-step.active .p-step-num{background:var(--primary);border-color:var(--primary);color:#fff}
+.p-step.done .p-step-num{background:var(--accent);border-color:var(--accent);color:#fff}
+.p-sep{width:60px;height:2px;background:var(--border)}
+.p-step.done + .p-sep{background:var(--accent)}
+
+/* URGENCY BAR */
+.urgency-strip{background:var(--danger);color:#fff;text-align:center;padding:8px 16px;font-size:13px;font-weight:600}
+#ord-countdown{font-family:'Montserrat',sans-serif;font-weight:800;color:#FFD700}
+
+/* MAIN LAYOUT */
+.checkout-wrap{padding:40px 0 80px}
+.checkout-grid{display:grid;grid-template-columns:1fr 380px;gap:30px;align-items:start}
+
+/* FORM CARD */
+.form-card{background:#fff;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,.07)}
+.form-card h2{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid var(--primary-light)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.form-group label .req{color:var(--danger)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:8px;font-family:'Open Sans',sans-serif;font-size:14px;color:var(--text);transition:border-color .2s,box-shadow .2s;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(255,107,0,.12)}
+.form-group input::placeholder{color:#B0B0B0}
+.form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%235D6D7E' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+
+/* PAYMENT METHOD */
+.pay-methods{display:flex;flex-direction:column;gap:10px;margin-bottom:18px}
+.pay-method{display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border);border-radius:10px;cursor:pointer;transition:all .2s}
+.pay-method:hover{border-color:var(--primary);background:var(--primary-light)}
+.pay-method.selected{border-color:var(--primary);background:var(--primary-light)}
+.pay-method input[type=radio]{width:18px;height:18px;accent-color:var(--primary);flex-shrink:0}
+.pay-method .pay-label{flex:1}
+.pay-method .pay-label strong{display:block;font-size:14px;font-weight:700;color:var(--dark)}
+.pay-method .pay-label span{font-size:12px;color:var(--text-light)}
+.pay-method .pay-icon{font-size:22px}
+
+/* ORDER BUMP */
+.order-bump{background:linear-gradient(135deg,#FFF3E8,#FFEAD6);border:2px dashed var(--primary);border-radius:12px;padding:20px;margin-bottom:22px}
+.bump-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.bump-header input[type=checkbox]{width:20px;height:20px;accent-color:var(--primary);flex-shrink:0;cursor:pointer}
+.bump-header label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--primary);cursor:pointer}
+.bump-body{font-size:13px;color:var(--text-light);line-height:1.6;padding-left:30px}
+.bump-price{color:var(--accent);font-weight:700}
+
+/* SUBMIT BTN */
+.submit-btn{width:100%;padding:20px 24px;background:var(--primary);color:#fff;border:none;border-radius:12px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:10px}
+.submit-btn:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 8px 30px rgba(255,107,0,.4)}
+.submit-footer{text-align:center;margin-top:14px;font-size:12px;color:var(--text-light)}
+.submit-footer i{margin-right:4px}
+
+/* ORDER SUMMARY */
+.summary-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.07);position:sticky;top:20px}
+.summary-card h3{font-size:16px;font-weight:800;color:var(--dark);margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--primary-light)}
+.summary-product{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.summary-product .prod-thumb{width:80px;height:80px;background:linear-gradient(135deg,var(--primary-light),#FFE4CC);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
+.summary-product .prod-info h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.summary-product .prod-info p{font-size:12px;color:var(--text-light);line-height:1.5}
+.summary-product .prod-price{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:var(--primary);white-space:nowrap}
+.summary-lines{border-top:1px solid var(--border);padding-top:14px;margin-bottom:14px}
+.summary-line{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px}
+.summary-line span:first-child{color:var(--text-light)}
+.summary-line span:last-child{font-weight:600;color:var(--dark)}
+.summary-line.total{font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;border-top:2px solid var(--border);margin-top:6px;padding-top:12px}
+.summary-line.total span:first-child{color:var(--dark)}
+.summary-line.total span:last-child{color:var(--primary)}
+.summary-line.free span:last-child{color:var(--accent)}
+
+/* TRUST ITEMS */
+.summary-trust{margin-top:20px;border-top:1px solid var(--border);padding-top:16px;display:flex;flex-direction:column;gap:10px}
+.st-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-light)}
+.st-item i{color:var(--accent);font-size:14px;width:16px}
+
+/* GUARANTEE BOX */
+.mini-guarantee{background:#F0FFF4;border:1px solid #C6F6D5;border-radius:10px;padding:14px;margin-top:14px;display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#276749}
+.mini-guarantee i{font-size:18px;flex-shrink:0;color:var(--accent);margin-top:2px}
+
+@media(max-width:860px){
+  .checkout-grid{grid-template-columns:1fr}
+  .summary-card{position:static;order:-1}
+  .form-row{grid-template-columns:1fr}
+  .order-topbar .trust-badges{display:none}
+  .p-step-label{display:none}
+}
+@media(max-width:480px){
+  .form-card,.summary-card{padding:20px 16px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="order-topbar">
+  <div class="logo">☀️ Sun<span>King</span> Solar Fan</div>
+  <div class="trust-badges">
+    <span><i class="fas fa-lock"></i> SSL Secured</span>
+    <span><i class="fas fa-shield-alt"></i> 30-Day Guarantee</span>
+    <span><i class="fas fa-truck"></i> Free Delivery</span>
+  </div>
+  <a href="index.html" style="color:rgba(255,255,255,.6);font-size:12px">← Back</a>
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar">
+  <div class="container">
+    <div class="progress-steps">
+      <div class="p-step active"><div class="p-step-num">1</div><span class="p-step-label">Your Details</span></div>
+      <div class="p-sep"></div>
+      <div class="p-step"><div class="p-step-num">2</div><span class="p-step-label">Confirmation</span></div>
+      <div class="p-sep"></div>
+      <div class="p-step"><div class="p-step-num">3</div><span class="p-step-label">Done!</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- URGENCY STRIP -->
+<div class="urgency-strip">
+  ⏰ Special price locks in when you complete your order — expires in <span id="ord-countdown">00:00:00</span>
+</div>
+
+<!-- MAIN CHECKOUT -->
+<div class="checkout-wrap">
+  <div class="container">
+    <div class="checkout-grid">
+      <!-- LEFT: FORM -->
+      <div>
+        <!-- CONTACT INFO -->
+        <div class="form-card" style="margin-bottom:20px">
+          <h2><i class="fas fa-user" style="color:var(--primary);margin-right:8px"></i>Your Contact Information</h2>
+          <div class="form-row">
+            <div class="form-group"><label>First Name <span class="req">*</span></label><input type="text" placeholder="e.g. Emeka" required></div>
+            <div class="form-group"><label>Last Name <span class="req">*</span></label><input type="text" placeholder="e.g. Okafor" required></div>
+          </div>
+          <div class="form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" placeholder="e.g. 0801 234 5678" required></div>
+          <div class="form-group"><label>WhatsApp Number <span class="req">*</span></label><input type="tel" placeholder="Same as phone or different WhatsApp number"></div>
+          <div class="form-group"><label>Email Address (Optional)</label><input type="email" placeholder="For order confirmation email"></div>
+        </div>
+
+        <!-- DELIVERY INFO -->
+        <div class="form-card" style="margin-bottom:20px">
+          <h2><i class="fas fa-map-marker-alt" style="color:var(--primary);margin-right:8px"></i>Delivery Address</h2>
+          <div class="form-group">
+            <label>State <span class="req">*</span></label>
+            <select required>
+              <option value="">-- Select Your State --</option>
+              <option>Abia</option><option>Adamawa</option><option>Akwa Ibom</option>
+              <option>Anambra</option><option>Bauchi</option><option>Bayelsa</option>
+              <option>Benue</option><option>Borno</option><option>Cross River</option>
+              <option>Delta</option><option>Ebonyi</option><option>Edo</option>
+              <option>Ekiti</option><option>Enugu</option><option>FCT Abuja</option>
+              <option>Gombe</option><option>Imo</option><option>Jigawa</option>
+              <option>Kaduna</option><option>Kano</option><option>Katsina</option>
+              <option>Kebbi</option><option>Kogi</option><option>Kwara</option>
+              <option>Lagos</option><option>Nasarawa</option><option>Niger</option>
+              <option>Ogun</option><option>Ondo</option><option>Osun</option>
+              <option>Oyo</option><option>Plateau</option><option>Rivers</option>
+              <option>Sokoto</option><option>Taraba</option><option>Yobe</option>
+              <option>Zamfara</option>
+            </select>
+          </div>
+          <div class="form-group"><label>City / LGA <span class="req">*</span></label><input type="text" placeholder="e.g. Ikeja, Surulere, Wuse II" required></div>
+          <div class="form-group"><label>Full Delivery Address <span class="req">*</span></label><textarea placeholder="House number, street name, area/estate, nearest landmark" rows="3" style="resize:vertical" required></textarea></div>
+          <div class="form-group"><label>Delivery Notes (Optional)</label><input type="text" placeholder="e.g. Call before coming, deliver to gate man, etc."></div>
+          <div style="background:#E8F4FD;border-radius:8px;padding:12px 14px;font-size:13px;color:var(--secondary);display:flex;align-items:flex-start;gap:8px">
+            <i class="fas fa-info-circle" style="margin-top:2px;flex-shrink:0"></i>
+            <span><strong>Delivery timeline:</strong> Lagos &amp; Abuja — 1–2 days. Other states — 3–5 business days. You'll receive an SMS once your order ships.</span>
+          </div>
+        </div>
+
+        <!-- ORDER BUMP -->
+        <div class="form-card" style="margin-bottom:20px">
+          <h2><i class="fas fa-gift" style="color:var(--primary);margin-right:8px"></i>Add-On Offer (Optional)</h2>
+          <div class="order-bump">
+            <div class="bump-header">
+              <input type="checkbox" id="bumpCheck">
+              <label for="bumpCheck">⚡ YES! Add a 2nd Solar Fan at 40% OFF — <span style="color:var(--accent)">₦32,999</span> (Save ₦22,000)</label>
+            </div>
+            <div class="bump-body">
+              One fan for the bedroom, one for the sitting room. Or gift one to a family member! At <span class="bump-price">₦32,999</span> (normally ₦54,999), this is the best deal you'll ever find on a second unit. Tick the box to add it to your order now — no separate checkout needed.
+            </div>
+          </div>
+        </div>
+
+        <!-- PAYMENT METHOD -->
+        <div class="form-card" style="margin-bottom:20px">
+          <h2><i class="fas fa-credit-card" style="color:var(--primary);margin-right:8px"></i>Payment Method</h2>
+          <div class="pay-methods">
+            <label class="pay-method selected" onclick="selectPay(this)">
+              <input type="radio" name="payment" value="pod" checked>
+              <div class="pay-label"><strong>Pay on Delivery (Recommended)</strong><span>Cash or POS machine when your order arrives. Inspect before paying.</span></div>
+              <span class="pay-icon">🏠</span>
+            </label>
+            <label class="pay-method" onclick="selectPay(this)">
+              <input type="radio" name="payment" value="transfer">
+              <div class="pay-label"><strong>Bank Transfer</strong><span>Transfer to our GTBank / Access / Zenith account before dispatch</span></div>
+              <span class="pay-icon">🏦</span>
+            </label>
+            <label class="pay-method" onclick="selectPay(this)">
+              <input type="radio" name="payment" value="card">
+              <div class="pay-label"><strong>Card Payment</strong><span>Visa, Mastercard, Verve — powered by Paystack</span></div>
+              <span class="pay-icon">💳</span>
+            </label>
+            <label class="pay-method" onclick="selectPay(this)">
+              <input type="radio" name="payment" value="ussd">
+              <div class="pay-label"><strong>USSD (*737# / *901# / *966#)</strong><span>Pay from your phone without internet</span></div>
+              <span class="pay-icon">📱</span>
+            </label>
+          </div>
+          <div id="bank-details" style="display:none;background:#F0FFF4;border:1px solid #C6F6D5;border-radius:8px;padding:14px;font-size:13px;margin-bottom:16px">
+            <strong style="color:var(--accent)">Bank Transfer Details:</strong><br>
+            Bank: GTBank &nbsp;|&nbsp; Account No: <strong>0123456789</strong> &nbsp;|&nbsp; Name: <strong>SunKing Solar NG Ltd</strong><br>
+            <span style="color:var(--text-light)">Send proof of payment to WhatsApp: 0800-000-0000 after transfer</span>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="form-card">
+          <div style="background:#FFF3E8;border-radius:8px;padding:14px;margin-bottom:18px;font-size:13px;display:flex;gap:10px">
+            <i class="fas fa-info-circle" style="color:var(--primary);font-size:16px;flex-shrink:0;margin-top:2px"></i>
+            <span>By clicking Place Order, you confirm your details are correct and agree to our <a href="#" style="color:var(--primary)">terms &amp; delivery policy</a>. We'll call to confirm your order before shipping.</span>
+          </div>
+          <button class="submit-btn" onclick="placeOrder()">
+            <i class="fas fa-lock"></i> Place My Order — Secure &amp; Safe
+          </button>
+          <div class="submit-footer">
+            <i class="fas fa-shield-alt"></i> Protected by 30-Day Money-Back Guarantee &nbsp;|&nbsp;
+            <i class="fas fa-truck"></i> Free Delivery Nationwide
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div class="summary-card">
+        <h3>🛒 Order Summary</h3>
+        <div class="summary-product">
+          <div class="prod-thumb">💨</div>
+          <div class="prod-info" style="flex:1">
+            <h4>Sun King Solar Fan 16"</h4>
+            <p>with 20W Monocrystalline Solar Panel<br>+ Free Solar Power Bank Bonus</p>
+          </div>
+        </div>
+        <div class="summary-lines">
+          <div class="summary-line"><span>Solar Fan 16" + Panel</span><span>₦54,999</span></div>
+          <div class="summary-line free"><span>🎁 Solar Power Bank Bonus</span><span>FREE</span></div>
+          <div class="summary-line free"><span>🚚 Nationwide Delivery</span><span>FREE</span></div>
+          <div class="summary-line" id="bumpSummary" style="display:none"><span>2nd Solar Fan (40% OFF)</span><span>₦32,999</span></div>
+          <div class="summary-line" style="color:var(--danger)"><span>💰 Discount Applied</span><span>-₦25,000</span></div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="grandTotal">₦54,999</span>
+          </div>
+        </div>
+        <div class="summary-trust">
+          <div class="st-item"><i class="fas fa-shield-alt"></i> 30-Day Money-Back Guarantee</div>
+          <div class="st-item"><i class="fas fa-truck"></i> Free delivery — all 36 states</div>
+          <div class="st-item"><i class="fas fa-certificate"></i> 100% Genuine Sun King Product</div>
+          <div class="st-item"><i class="fas fa-headset"></i> Customer support: Mon–Sat 8am–8pm</div>
+          <div class="st-item"><i class="fas fa-star"></i> 4.8/5 from 5,000+ verified buyers</div>
+        </div>
+        <div class="mini-guarantee">
+          <i class="fas fa-shield-alt"></i>
+          <div><strong>Zero Risk Guarantee:</strong> Not happy within 30 days? We'll refund you in full — no questions, no stress, no drama.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER STRIP -->
+<div style="background:var(--secondary-dark);color:rgba(255,255,255,.5);text-align:center;padding:16px;font-size:12px">
+  © 2024 SunKing Solar Fan Nigeria | <a href="#" style="color:rgba(255,255,255,.4)">Privacy Policy</a> | <a href="#" style="color:rgba(255,255,255,.4)">Returns Policy</a>
+</div>
+
+<script>
+// Countdown
+function pad(n){return String(n).padStart(2,'0')}
+(function(){
+  const exp = parseInt(localStorage.getItem('offerExp')) || (Date.now() + 2*3600000);
+  function tick(){
+    const rem = Math.max(0, exp - Date.now());
+    const h = Math.floor(rem/3600000), m = Math.floor((rem%3600000)/60000), s = Math.floor((rem%60000)/1000);
+    const el = document.getElementById('ord-countdown');
+    if(el) el.textContent = pad(h)+':'+pad(m)+':'+pad(s);
+    if(rem > 0) requestAnimationFrame(()=>setTimeout(tick,1000));
+  }
+  tick();
+})();
+
+// Payment method selection
+function selectPay(el){
+  document.querySelectorAll('.pay-method').forEach(m=>m.classList.remove('selected'));
+  el.classList.add('selected');
+  const val = el.querySelector('input').value;
+  document.getElementById('bank-details').style.display = val === 'transfer' ? 'block' : 'none';
+}
+
+// Order bump
+document.getElementById('bumpCheck').addEventListener('change', function(){
+  const bumpRow = document.getElementById('bumpSummary');
+  const total = document.getElementById('grandTotal');
+  if(this.checked){
+    bumpRow.style.display = 'flex';
+    total.textContent = '₦87,998';
+  } else {
+    bumpRow.style.display = 'none';
+    total.textContent = '₦54,999';
+  }
+});
+
+// Place order → redirect to upsell
+function placeOrder(){
+  const fields = document.querySelectorAll('input[required], select[required], textarea[required]');
+  let valid = true;
+  fields.forEach(f=>{
+    if(!f.value.trim()){
+      f.style.borderColor='var(--danger)';
+      valid = false;
+    } else {
+      f.style.borderColor='var(--border)';
+    }
+  });
+  if(!valid){
+    alert('Please fill in all required fields (marked with *)');
+    return;
+  }
+  // Redirect to upsell page
+  window.location.href = 'upsell.html';
+}
+</script>
+</body>
+</html>

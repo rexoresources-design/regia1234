@@ -7,5 +7,7 @@
 !api/**
 !site/
 !site/**
+!solar-fan-sales/
+!solar-fan-sales/**
 
 .vercel
